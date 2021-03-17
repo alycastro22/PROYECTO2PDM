@@ -5,6 +5,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
 
 import androidx.recyclerview.widget.RecyclerView
@@ -40,14 +41,26 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
             itemTitle = itemView.findViewById(R.id.item_tittle)
             itemDetail = itemView.findViewById(R.id.item_details)
 
-            itemView.setOnClickListener { v: View  ->
-                var position: Int = getAdapterPosition()
+            /*itemView.setOnClickListener { v: View  ->
+                var position: Int = getItemViewType()
 
-                Snackbar.make(v, "Click en item $position",
-                    Snackbar.LENGTH_LONG).setAction("Action", null).show()
+                when (position){
+                    0 -> return ClientesFragment()
+                    1 -> return EmpleadosFragment()
+                    2 -> return MenuFragment()
+                    3 -> return MesaFragment()
+                    4 -> return PedidoFragment()
 
-            }
+                    else -> return@setOnClickListener.
 
+                }
+
+              /*  Snackbar.make(v, "Click en item $position",
+                    Snackbar.LENGTH_LONG).setAction("Action", null).show()*/
+
+
+
+            }*/
         }
     }
 
