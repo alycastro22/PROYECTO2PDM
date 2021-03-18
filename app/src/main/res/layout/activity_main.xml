@@ -26,11 +26,11 @@
                 android:id="@+id/backdrop"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:scaleType="centerCrop"
+                android:contentDescription="@string/todo1"
                 android:fitsSystemWindows="true"
-                app:layout_collapseMode="parallax"
-                android:src="@drawable/honduras"
-                android:contentDescription="TODO" />
+                android:scaleType="centerCrop"
+                android:src="@drawable/comida"
+                app:layout_collapseMode="parallax" />
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar2"

@@ -17,14 +17,13 @@
         app:tabGravity="fill"
 
         />
-    <?xml version="1.0" encoding="utf-8"?>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
         <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragment_3"
+            android:id="@+id/fragment_5"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -37,7 +36,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragment_4"
+            android:id="@+id/fragment_6"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="16dp"
@@ -49,11 +48,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_3"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_5"
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
-            android:id="@+id/txvMenu"
+            android:id="@+id/txvPedidos"
             android:layout_width="268dp"
             android:layout_height="41dp"
             android:layout_marginTop="112dp"
@@ -81,11 +80,11 @@
             android:text="@string/txtCodigo"
             android:textColor="#000000"
             android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="@+id/txvMenu"
-            app:layout_constraintTop_toBottomOf="@+id/txvMenu" />
+            app:layout_constraintEnd_toEndOf="@+id/txvPedidos"
+            app:layout_constraintTop_toBottomOf="@+id/txvPedidos" />
 
         <EditText
-            android:id="@+id/txtNombre1"
+            android:id="@+id/txtNombre3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="52dp"
@@ -103,7 +102,7 @@
             app:layout_constraintTop_toBottomOf="@+id/txtCodigo" />
 
         <EditText
-            android:id="@+id/txtPrecio"
+            android:id="@+id/txtPuesto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="57dp"
@@ -115,8 +114,8 @@
             android:inputType="textPersonName"
             android:text="@string/txtPrecio"
             android:textColor="#000000"
-            app:layout_constraintStart_toStartOf="@+id/txtNombre1"
-            app:layout_constraintTop_toBottomOf="@+id/txtNombre1" />
+            app:layout_constraintStart_toStartOf="@+id/txtNombre3"
+            app:layout_constraintTop_toBottomOf="@+id/txtNombre3" />
 
         <EditText
             android:id="@+id/txtDescripcion"
@@ -131,8 +130,8 @@
             android:inputType="textPersonName"
             android:text="@string/txtDescripcion"
             android:textColor="#000000"
-            app:layout_constraintStart_toStartOf="@+id/txtPrecio"
-            app:layout_constraintTop_toBottomOf="@+id/txtPrecio" />
+            app:layout_constraintStart_toStartOf="@+id/txtPuesto"
+            app:layout_constraintTop_toBottomOf="@+id/txtPuesto" />
 
         <TextView
             android:id="@+id/txvRegistrar"
@@ -150,21 +149,21 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_3" />
+            app:layout_constraintTop_toBottomOf="@+id/fragment_5" />
 
         <ImageView
             android:id="@+id/imageRetroceder"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginStart="40dp"
-            android:layout_marginEnd="170dp"
+            android:layout_marginEnd="340dp"
             android:layout_marginBottom="650dp"
             android:contentDescription="@string/todo1"
             android:rotation="180"
             android:src="@drawable/retroceder"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/txvMenu"
-            app:layout_constraintStart_toStartOf="@+id/fragment_4" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/fragment_6" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

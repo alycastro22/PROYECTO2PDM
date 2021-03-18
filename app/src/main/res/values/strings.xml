@@ -20,6 +20,15 @@
     <string name="txtCodigo">Codigo</string>
     <string name="txtPrecio">Precio</string>
     <string name="txtDescripcion">Descripcion</string>
+    <string name="txtMesa">Mesa</string>
+    <string name="spinnerPuesto">Puesto</string>
+    <string name="txvEmpleados">Empleados</string>
+    <string name="txvPedidos">Pedidos</string>
+    <string name="spinnerCliente">Cliente</string>
+    <string name="spinnerVariosMenus">Varios Menus</string>
+    <string name="spinnerEmpleado">Empleado</string>
+
+
     <string name="todo1">TODO</string>
 
 </resources>

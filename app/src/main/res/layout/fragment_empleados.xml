@@ -4,20 +4,151 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".MenuFragment">
+    tools:context=".EmpleadosFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         app:tabMode="fixed"
         app:tabGravity="fill"
+
         />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragment_5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="594dp"
+            app:layout_constraintBottom_toTopOf="@+id/txvRegistrar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragment_6"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/empleados2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_5"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/txvPedidos"
+            android:layout_width="268dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="112dp"
+            android:layout_marginEnd="68dp"
+            android:fontFamily="@font/arbutus_slab"
+            android:gravity="center|center_vertical"
+            android:text="@string/txvEmpleados"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/txtCodigo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="53dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="340dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:fontFamily="@font/arbutus_slab"
+            android:gravity="center"
+            android:hint="@string/todo1"
+            android:inputType="textPersonName"
+            android:text="@string/txtCodigo"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/fragment_6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txvPedidos" />
+
+        <EditText
+            android:id="@+id/txtNombre3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="52dp"
+            android:layout_marginBottom="340dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:fontFamily="@font/arbutus_slab"
+            android:gravity="center"
+            android:hint="@string/todo1"
+            android:inputType="textPersonName"
+            android:text="@string/txtNombre"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="@+id/fragment_6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtCodigo" />
+
+        <TextView
+            android:id="@+id/txvRegistrar"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="68dp"
+            android:layout_marginEnd="68dp"
+            android:layout_marginBottom="61dp"
+            android:background="@drawable/btn_boton"
+            android:fontFamily="@font/arbutus_slab"
+            android:gravity="center"
+            android:text="@string/txvBottom"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_5" />
+
+        <ImageView
+            android:id="@+id/imageRetroceder"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="340dp"
+            android:layout_marginBottom="650dp"
+            android:contentDescription="@string/todo1"
+            android:rotation="180"
+            android:src="@drawable/retroceder"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/fragment_6" />
+
+        <Spinner
+            android:id="@+id/spinnerCliente"
+            android:layout_width="220dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="170dp"
+            app:layout_constraintBottom_toBottomOf="@+id/fragment_6"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </FrameLayout>
