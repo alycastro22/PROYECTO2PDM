@@ -1,5 +1,6 @@
 package hn.edu.ujcv.pdm_2021_i_proyecto2
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.activity_main.*
 import android.graphics.Color
+import androidx.core.content.ContextCompat
 
 class MainActivity : AppCompatActivity() {
 
@@ -47,5 +49,9 @@ class MainActivity : AppCompatActivity() {
 
 
         }
+    }
+    fun cliente(){
+        val regresarMenu = Intent(this, MainActivity::class.java)
+        startActivity(regresarMenu)
     }
 }

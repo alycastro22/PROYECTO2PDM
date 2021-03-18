@@ -1,14 +1,18 @@
 package hn.edu.ujcv.pdm_2021_i_proyecto2
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.widget.ImageView
 import android.widget.TextView
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.core.content.ContextCompat.startActivity
 import androidx.fragment.app.Fragment
-import com.google.android.material.snackbar.Snackbar
+import androidx.fragment.app.FragmentContainerView
 
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.adapter.FragmentViewHolder
 
 class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
@@ -35,16 +39,18 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
         var itemImage: ImageView
         var itemTitle: TextView
         var itemDetail: TextView
+       
 
         init {
             itemImage = itemView.findViewById(R.id.item_image)
             itemTitle = itemView.findViewById(R.id.item_tittle)
             itemDetail = itemView.findViewById(R.id.item_details)
 
-            /*itemView.setOnClickListener { v: View  ->
+            itemView.setOnClickListener { v: View? ->
                 var position: Int = getItemViewType()
 
-                when (position){
+
+                /*when (position){
                     0 -> return ClientesFragment()
                     1 -> return EmpleadosFragment()
                     2 -> return MenuFragment()
@@ -53,14 +59,13 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
                     else -> return@setOnClickListener.
 
-                }
-
-              /*  Snackbar.make(v, "Click en item $position",
+                }*/
+                    /*Snackbar.make(v, "Click en item $position",
                     Snackbar.LENGTH_LONG).setAction("Action", null).show()*/
 
 
 
-            }*/
+            }
         }
     }
 
@@ -73,5 +78,6 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
     override fun getItemCount(): Int {
         return titles.size
     }
+
 }
 

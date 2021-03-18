@@ -11,4 +11,15 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="txtId"> ID</string>
+    <string name="txtNombre">Nombre</string>
+    <string name="txtCorreo"> Correo</string>
+    <string name="txvRegistrarCliente">Registro Cliente</string>
+    <string name="txvBottom">Registrar</string>
+    <string name="txvRegistrarEmpleado">Registro Empleado</string>
+    <string name="txtCodigo">Codigo</string>
+    <string name="txtPrecio">Precio</string>
+    <string name="txtDescripcion">Descripcion</string>
+    <string name="todo1">TODO</string>
+
 </resources>
