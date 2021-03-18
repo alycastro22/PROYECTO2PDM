@@ -16,7 +16,7 @@
     <string name="txtCorreo"> Correo</string>
     <string name="txvRegistrarCliente">Registro Cliente</string>
     <string name="txvBottom">Registrar</string>
-    <string name="txvRegistrarEmpleado">Registro Empleado</string>
+    <string name="txvMenu">MENU</string>
     <string name="txtCodigo">Codigo</string>
     <string name="txtPrecio">Precio</string>
     <string name="txtDescripcion">Descripcion</string>
