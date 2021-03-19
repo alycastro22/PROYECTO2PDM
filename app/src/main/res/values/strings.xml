@@ -30,5 +30,7 @@
 
 
     <string name="todo1">TODO</string>
+    <string name="title_activity_prueba">Prueba</string>
+    <string name="title_activity_prueba2">Prueba2</string>
 
 </resources>

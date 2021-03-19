@@ -47,19 +47,25 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
             itemDetail = itemView.findViewById(R.id.item_details)
 
             itemView.setOnClickListener { v: View? ->
-                var position: Int = getItemViewType()
+                var position: Int = adapterPosition
 
 
-                /*when (position){
-                    0 -> return ClientesFragment()
-                    1 -> return EmpleadosFragment()
-                    2 -> return MenuFragment()
+                when (position){
+                    0 -> {
+                        val intent = Intent(itemView.context, Prueba::class.java)
+                        startActivity(itemView.context, intent, null)
+                    }
+                    1 -> {
+                        val intent = Intent(itemView.context, Prueba2::class.java)
+                        startActivity(itemView.context, intent, null)
+                    }
+                    /**2 -> return MenuFragment()
                     3 -> return MesaFragment()
-                    4 -> return PedidoFragment()
+                    4 -> return PedidoFragment()**/
 
-                    else -> return@setOnClickListener.
+                    else -> return@setOnClickListener
 
-                }*/
+                }
                     /*Snackbar.make(v, "Click en item $position",
                     Snackbar.LENGTH_LONG).setAction("Action", null).show()*/
 
