@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Menu_Activity">
 
     <!-- TODO: Update blank fragment layout -->
@@ -12,7 +12,6 @@
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         app:tabMode="fixed"
         app:tabGravity="fill"
 
@@ -22,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/menucafe"
-        tools:context=".MainActivity">
+        tools:context=".Menu_Activity">
 
 
         <TextView
@@ -76,10 +75,10 @@
             app:layout_constraintTop_toBottomOf="@+id/txtCodigo" />
 
         <EditText
-            android:id="@+id/txtPuesto"
+            android:id="@+id/txtPrecio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="57dp"
+            android:layout_marginTop="56dp"
             android:autofillHints=""
             android:ems="10"
             android:fontFamily="@font/arbutus_slab"
@@ -95,7 +94,9 @@
             android:id="@+id/txtDescripcion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="57dp"
+            android:layout_marginStart="101dp"
+            android:layout_marginTop="503dp"
+            android:layout_marginEnd="85dp"
             android:autofillHints=""
             android:ems="10"
             android:fontFamily="@font/arbutus_slab"
@@ -104,14 +105,16 @@
             android:inputType="textPersonName"
             android:text="@string/txtDescripcion"
             android:textColor="#000000"
-            app:layout_constraintStart_toStartOf="@+id/txtPuesto"
-            app:layout_constraintTop_toBottomOf="@+id/txtPuesto" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/txvRegistrar"
             android:layout_width="279dp"
             android:layout_height="70dp"
             android:layout_marginStart="68dp"
+            android:layout_marginTop="600dp"
             android:layout_marginEnd="68dp"
             android:layout_marginBottom="61dp"
             android:background="@drawable/btn_boton"
@@ -123,21 +126,22 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_5" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/imageRetroceder"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginStart="40dp"
-            android:layout_marginEnd="340dp"
-            android:layout_marginBottom="650dp"
+            android:layout_marginTop="63dp"
+            android:layout_marginEnd="344dp"
+            android:layout_marginBottom="628dp"
             android:contentDescription="@string/todo1"
             android:rotation="180"
             android:src="@drawable/retroceder"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/txvRegistrarCliente" />
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

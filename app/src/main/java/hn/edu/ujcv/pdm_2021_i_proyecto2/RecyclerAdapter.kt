@@ -17,13 +17,13 @@ import androidx.viewpager2.adapter.FragmentViewHolder
 
 class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
-    private val titles = arrayOf("Registrar Cliente",
-        "Menu", "Registrar Mesa", "Empleado",
-        "Realizar Pedido", "Realizar Factura")
+    private val titles = arrayOf("Clientes",
+        "Menu", "Mesa", "Empleados",
+        "Pedido", "Factura")
 
-    private val details = arrayOf("Item detalle 1", "Item detalle 2",
-        "Item detalle 3", "Item detalle 4",
-        "Item detalle 5", "Item detalle 6")
+    private val details = arrayOf("Registrar Clientes", "Registrar Menu",
+        "Registrar Mesa", "Registrar Empleado",
+        "Registrar Pedido", "Realizar Factura")
 
     private val images = intArrayOf(R.drawable.cliente,
         R.drawable.menu, R.drawable.mesa1,
@@ -49,18 +49,29 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
             itemView.setOnClickListener { v: View? ->
                 var position: Int = adapterPosition
-                Toast.makeText(itemView.context, "Seleccionaste el item #${position + 1}", Toast.LENGTH_SHORT).show()
-
-
+                //Toast.makeText(itemView.context, "Seleccionaste el item #${position}", Toast.LENGTH_LONG).show()
                 when (position){
                     0 -> {
-                        val intent = Intent(itemView.context, Prueba::class.java)
-                        startActivity(itemView.context, intent, null)
+                        val intent = Intent(itemView.context, Cliente_Activity::class.java)
+                        startActivity(itemView.context, intent,null)
                     }
                     1 -> {
-                        val intent = Intent(itemView.context, Prueba2::class.java)
+                        val intent = Intent(itemView.context, Menu_Activity::class.java)
                         startActivity(itemView.context, intent, null)
                     }
+                    2 -> {
+                        val intent = Intent(itemView.context, Mesa_Activity::class.java)
+                        startActivity(itemView.context, intent, null)
+                    }
+                    3 -> {
+                        val intent = Intent(itemView.context, Empleados_Activity::class.java)
+                        startActivity(itemView.context, intent, null)
+                    }
+                    4 -> {
+                        val intent = Intent(itemView.context, Pedido_Activity::class.java)
+                        startActivity(itemView.context, intent, null)
+                    }
+
                     /**2 -> return MenuFragment()
                     3 -> return MesaFragment()
                     4 -> return PedidoFragment()**/
