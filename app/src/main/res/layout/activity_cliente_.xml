@@ -36,6 +36,8 @@
             android:hint="@string/todo1"
             android:inputType="textPersonName"
             android:text="@string/txtId"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -54,6 +56,8 @@
             android:hint="@string/todo1"
             android:inputType="textPersonName"
             android:text="@string/txtNombre"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -72,6 +76,8 @@
             android:hint="@string/todo1"
             android:inputType="textPersonName"
             android:text="@string/txtCorreo"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

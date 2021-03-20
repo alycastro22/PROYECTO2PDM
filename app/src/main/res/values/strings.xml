@@ -33,5 +33,7 @@
     <string name="todo1">TODO</string>
     <string name="title_activity_prueba">Prueba</string>
     <string name="title_activity_prueba2">Prueba2</string>
+    <string name="title_facturaactivity_list">FacturaActivity</string>
+    <string name="title_facturaactivity_detail">FacturaActivity Detail</string>
 
 </resources>
