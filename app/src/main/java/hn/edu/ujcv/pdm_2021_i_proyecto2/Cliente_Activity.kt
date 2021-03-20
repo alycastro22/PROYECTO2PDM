@@ -4,8 +4,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_cliente_.*
+import java.lang.StringBuilder
 
 class Cliente_Activity : AppCompatActivity() {
+
+    var valores : HashMap<Int,String> = hashMapOf()
+    var  numero = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cliente_)
@@ -21,5 +25,18 @@ class Cliente_Activity : AppCompatActivity() {
         if (txtCorreo.text.isEmpty()){
             Toast.makeText(this, "Ingrese el correo del cliente", Toast.LENGTH_LONG).show()
         }
+    }
+
+    fun guardaralumno(){
+        if (txtId.text.isNotEmpty() && txtNombre.text.isNotEmpty() && txtCorreo.text.isNotEmpty()){
+            val dato = StringBuilder()
+            numero + 1
+            dato.append(txtId.text.toString().trim()).append("|")
+            dato.append(txtNombre.text.toString().trim()).append("|")
+            dato.append(txtCorreo.text.toString())
+            valores.put(numero, dato.toString())
+
+        }
+
     }
 }
