@@ -9,10 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PDM_2021_I_PROYECTO2">
+        <activity android:name=".Menu_Activity"></activity>
+        <activity android:name=".Cliente_Activity" />
+
         <activity
             android:name=".Prueba2"
             android:label="@string/title_activity_prueba2"
-            android:theme="@style/Theme.PDM_2021_I_PROYECTO2.NoActionBar"></activity>
+            android:theme="@style/Theme.PDM_2021_I_PROYECTO2.NoActionBar" />
         <activity
             android:name=".Prueba"
             android:label="@string/title_activity_prueba"

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".EmpleadosFragment">
+    tools:context=".Menu_Activity">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -17,39 +17,13 @@
         app:tabGravity="fill"
 
         />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/menucafe"
         tools:context=".MainActivity">
 
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragment_5"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="594dp"
-            app:layout_constraintBottom_toTopOf="@+id/txvRegistrar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragment_6"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/menucafe"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_5"
-            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/txvPedidos"
@@ -135,8 +109,8 @@
 
         <TextView
             android:id="@+id/txvRegistrar"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="279dp"
+            android:layout_height="70dp"
             android:layout_marginStart="68dp"
             android:layout_marginEnd="68dp"
             android:layout_marginBottom="61dp"
@@ -163,7 +137,7 @@
             android:src="@drawable/retroceder"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/fragment_6" />
+            app:layout_constraintStart_toStartOf="@+id/txvRegistrarCliente" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
