@@ -1,10 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".EmpleadosFragment">
+    tools:context=".Empleados_Activity">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -21,36 +20,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragment_5"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="594dp"
-            app:layout_constraintBottom_toTopOf="@+id/txvRegistrar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragment_6"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/empleados2"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_5"
-            app:layout_constraintVertical_bias="1.0" />
+        android:background="@drawable/empleados2"
+        tools:context=".Empleados_Activity">
 
         <TextView
             android:id="@+id/txvPedidos"
@@ -108,8 +79,8 @@
 
         <TextView
             android:id="@+id/txvRegistrar"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="270dp"
+            android:layout_height="70dp"
             android:layout_marginStart="68dp"
             android:layout_marginEnd="68dp"
             android:layout_marginBottom="61dp"
@@ -121,8 +92,7 @@
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_5" />
+            app:layout_constraintStart_toStartOf="parent"/>
 
         <ImageView
             android:id="@+id/imageRetroceder"
@@ -130,20 +100,18 @@
             android:layout_height="40dp"
             android:layout_marginStart="40dp"
             android:layout_marginEnd="340dp"
-            android:layout_marginBottom="650dp"
+            android:layout_marginBottom="780dp"
             android:contentDescription="@string/todo1"
             android:rotation="180"
             android:src="@drawable/retroceder"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/fragment_6" />
+            app:layout_constraintEnd_toEndOf="parent"/>
 
         <Spinner
             android:id="@+id/spinnerCliente"
             android:layout_width="220dp"
             android:layout_height="40dp"
-            android:layout_marginTop="170dp"
-            app:layout_constraintBottom_toBottomOf="@+id/fragment_6"
+            app:layout_constraintBottom_toBottomOf="@+id/txvRegistrar"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

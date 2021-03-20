@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".EmpleadosFragment">
+    tools:context=".Mesa_Activity">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -14,42 +14,13 @@
         android:layout_height="wrap_content"
 
         app:tabMode="fixed"
-        app:tabGravity="fill"
+        app:tabGravity="fill" />
 
-        />
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragment_5"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="594dp"
-            app:layout_constraintBottom_toTopOf="@+id/txvRegistrar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragment_6"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/mesa4"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_5"
-            app:layout_constraintVertical_bias="0.0" />
+        android:background="@drawable/mesa4"
+        tools:context=".Mesa_Activity">
 
         <TextView
             android:id="@+id/txvPedidos"
@@ -69,8 +40,7 @@
             android:id="@+id/txtCodigo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="380dp"
+            android:layout_marginBottom="330dp"
             android:autofillHints=""
             android:ems="10"
             android:fontFamily="@font/arbutus_slab"
@@ -81,7 +51,7 @@
             android:textColor="@color/black"
             android:textColorHint="#090808"
             android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="@+id/fragment_6"
+            app:layout_constraintBottom_toBottomOf="@+id/txvRegistrar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txvPedidos" />
@@ -90,7 +60,7 @@
             android:id="@+id/txtDescripcion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="360dp"
+            android:layout_marginBottom="320dp"
             android:autofillHints=""
             android:ems="10"
             android:fontFamily="@font/arbutus_slab"
@@ -100,14 +70,15 @@
             android:text="@string/txtDescripcion"
             android:textColor="#000000"
             android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="@+id/fragment_6"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtCodigo" />
 
         <TextView
             android:id="@+id/txvRegistrar"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="270dp"
+            android:layout_height="70dp"
             android:layout_marginStart="68dp"
             android:layout_marginEnd="68dp"
             android:layout_marginBottom="61dp"
@@ -119,21 +90,21 @@
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_5" />
+            app:layout_constraintStart_toStartOf="parent"/>
 
         <ImageView
             android:id="@+id/imageRetroceder"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_marginEnd="310dp"
+            android:layout_marginEnd="20dp"
             android:layout_marginBottom="650dp"
             android:contentDescription="@string/todo1"
             android:rotation="180"
             android:src="@drawable/retroceder"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/fragment_6" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

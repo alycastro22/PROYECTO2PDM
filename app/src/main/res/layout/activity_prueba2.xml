@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,8 +8,8 @@
     tools:context=".Prueba2">
 
     <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_width="match_parent"
         android:theme="@style/Theme.PDM_2021_I_PROYECTO2.AppBarOverlay">
 
         <androidx.appcompat.widget.Toolbar
@@ -20,7 +21,89 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_prueba2" />
+    <include layout="@layout/content_prueba2">
+
+        <EditText
+            android:id="@+id/txvId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="250dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:fontFamily="@font/arbutus_slab"
+            android:gravity="center"
+            android:hint="@string/todo1"
+            android:inputType="textPersonName"
+            android:text="@string/txtId"
+            app:layout_constraintEnd_toEndOf="@+id/txtCorreo"
+            app:layout_constraintStart_toStartOf="@+id/txtCorreo"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/txtNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="350dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:fontFamily="@font/arbutus_slab"
+            android:gravity="center"
+            android:hint="@string/todo1"
+            android:inputType="textPersonName"
+            android:text="@string/txtNombre"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/txtCorreo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="430dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:fontFamily="@font/arbutus_slab"
+            android:gravity="center"
+            android:hint="@string/todo1"
+            android:inputType="textPersonName"
+            android:text="@string/txtCorreo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txvRegistrarCliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="548dp"
+            android:fontFamily="@font/arbutus_slab"
+            android:text="@string/txvRegistrarCliente"
+            android:textColor="#000000"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/txvBottom"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="145dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/btn_boton"
+            android:fontFamily="@font/arbutus_slab"
+            android:gravity="center"
+            android:text="@string/txvBottom"
+            android:textColor="#000000"
+            android:textColorHint="#1E1D1D"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="@+id/txtCorreo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtCorreo" />
+
+    </include>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"

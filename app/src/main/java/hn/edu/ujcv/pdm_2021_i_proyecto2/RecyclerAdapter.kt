@@ -7,6 +7,7 @@ import android.widget.TextView
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentContainerView
@@ -48,6 +49,7 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
             itemView.setOnClickListener { v: View? ->
                 var position: Int = adapterPosition
+                Toast.makeText(itemView.context, "Seleccionaste el item #${position + 1}", Toast.LENGTH_SHORT).show()
 
 
                 when (position){

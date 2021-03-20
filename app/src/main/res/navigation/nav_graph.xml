@@ -44,22 +44,20 @@
         <action
             android:id="@+id/action_Second2Fragment_to_First2Fragment"
             app:destination="@id/First2Fragment" />
-    </fragment>
-    <fragment
+    </fragment><fragment
         android:id="@+id/First3Fragment"
         android:name="hn.edu.ujcv.pdm_2021_i_proyecto2.First3Fragment"
         android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first3">
+        tools:layout="@layout/fragment_first3" >
 
         <action
             android:id="@+id/action_First3Fragment_to_Second3Fragment"
             app:destination="@id/Second3Fragment" />
-    </fragment>
-    <fragment
+    </fragment><fragment
         android:id="@+id/Second3Fragment"
         android:name="hn.edu.ujcv.pdm_2021_i_proyecto2.Second3Fragment"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second3">
+        tools:layout="@layout/fragment_second3" >
 
         <action
             android:id="@+id/action_Second3Fragment_to_First3Fragment"

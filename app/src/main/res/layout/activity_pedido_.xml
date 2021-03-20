@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Pedido_Activity">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        app:tabMode="fixed"
+        app:tabGravity="fill" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/pedidos1"
+        tools:context=".Pedido_Activity">
+
+        <TextView
+            android:id="@+id/txvPedidos"
+            android:layout_width="268dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="112dp"
+            android:layout_marginEnd="68dp"
+            android:fontFamily="@font/arbutus_slab"
+            android:gravity="center|center_vertical"
+            android:text="@string/txvPedidos"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txvRegistrar"
+            android:layout_width="270dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="68dp"
+            android:layout_marginEnd="68dp"
+            android:layout_marginBottom="61dp"
+            android:background="@drawable/btn_boton"
+            android:fontFamily="@font/arbutus_slab"
+            android:gravity="center"
+            android:text="@string/txvBottom"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <ImageView
+            android:id="@+id/imageRetroceder"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="340dp"
+            android:layout_marginBottom="750dp"
+            android:contentDescription="@string/todo1"
+            android:rotation="180"
+            android:src="@drawable/retroceder"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/spinnerCliente"
+            android:layout_width="220dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="240dp"
+            app:layout_constraintBottom_toBottomOf="@+id/txvRegistrar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/spinnerVariosMenus"
+            android:layout_width="220dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/txvRegistrar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/spinnerEmpleado"
+            android:layout_width="220dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="250dp"
+            app:layout_constraintBottom_toBottomOf="@+id/txvRegistrar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>
