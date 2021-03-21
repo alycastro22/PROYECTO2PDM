@@ -24,24 +24,26 @@
 
         <TextView
             android:id="@+id/txvFactura"
-            android:layout_width="268dp"
-            android:layout_height="41dp"
+            android:layout_width="162dp"
+            android:layout_height="0dp"
             android:layout_marginTop="112dp"
             android:layout_marginEnd="68dp"
+            android:layout_marginBottom="466dp"
             android:fontFamily="@font/arbutus_slab"
             android:gravity="center|center_vertical"
             android:text="@string/txvPedidos"
             android:textColor="@color/black"
             android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/txvRegistrar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/txvRegistrar"
-            android:layout_width="270dp"
-            android:layout_height="70dp"
-            android:layout_marginStart="68dp"
-            android:layout_marginEnd="68dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginEnd="70dp"
             android:layout_marginBottom="61dp"
             android:background="@drawable/btn_boton"
             android:fontFamily="@font/arbutus_slab"
@@ -51,51 +53,52 @@
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txvFactura" />
 
         <ImageView
             android:id="@+id/imageRetroceder"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginEnd="340dp"
-            android:layout_marginBottom="750dp"
+            android:layout_width="110dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="109dp"
             android:contentDescription="@string/todo1"
             android:rotation="180"
             android:src="@drawable/retroceder"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/spinnerPuesto"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Spinner
             android:id="@+id/spinnerPuesto"
             android:layout_width="220dp"
-            android:layout_height="40dp"
-            android:layout_marginBottom="240dp"
-            app:layout_constraintBottom_toBottomOf="@+id/txvRegistrar"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="0dp"
+            android:layout_marginBottom="76dp"
+            app:layout_constraintBottom_toTopOf="@+id/spinnerVariosMenus"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageRetroceder" />
 
         <Spinner
             android:id="@+id/spinnerVariosMenus"
             android:layout_width="220dp"
-            android:layout_height="40dp"
-            android:layout_marginBottom="10dp"
-            app:layout_constraintBottom_toBottomOf="@+id/txvRegistrar"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="0dp"
+            android:layout_marginBottom="90dp"
+            app:layout_constraintBottom_toTopOf="@+id/spinnerEmpleado1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinnerPuesto" />
 
         <Spinner
             android:id="@+id/spinnerEmpleado1"
             android:layout_width="220dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="250dp"
-            app:layout_constraintBottom_toBottomOf="@+id/txvRegistrar"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="0dp"
+            android:layout_marginBottom="120dp"
+            app:layout_constraintBottom_toTopOf="@+id/txvRegistrar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinnerVariosMenus" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

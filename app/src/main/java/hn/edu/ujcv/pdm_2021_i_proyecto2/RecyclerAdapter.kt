@@ -17,12 +17,24 @@ import androidx.viewpager2.adapter.FragmentViewHolder
 
 class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
-    var data: HashMap<Int, String> =  hashMapOf()
+    var clientes: ArrayList<String> = ArrayList()
+    var menu: ArrayList<String> = ArrayList()
 
-    fun datos (clientes: HashMap<Int, String>) {
-        this.data = clientes
-        println("Recycler dato"+ data.toString())
+
+    fun datos (cliente: ArrayList<String>) {
+
+        this.clientes = cliente
+        println("Recycler dato"+ clientes.toString())
+
     }
+    fun menu (cliente: ArrayList<String>, menus: ArrayList<String>) {
+
+        this.clientes = cliente
+        this.menu = menus
+        println("Menu"+ clientes.toString() + menu.toString() )
+
+    }
+
 
     private val titles = arrayOf("Clientes",
         "Menu", "Mesa", "Empleados",
@@ -58,12 +70,34 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
                 var position: Int = adapterPosition
                 //Toast.makeText(itemView.context, "Seleccionaste el item #${position}", Toast.LENGTH_LONG).show()
                 when (position){
-                    0 -> { IrAClientes(itemView)}
-                    1 -> { IrAMenu(itemView)}
-                    2 -> { IrAMesa(itemView)}
-                    3 -> { IrAEmpleado(itemView)}
-                    4 -> { IrAPedido(itemView)}
-                    5 -> { IrAFactura(itemView)}
+                    0 -> {
+                        val intent = Intent(itemView.context, Cliente_Activity::class.java)
+                        startActivity(itemView.context, intent,null)
+                    }
+                    1 -> {
+                        val intent = Intent(itemView.context, Menu_Activity::class.java)
+                        intent.putExtra("cliente", clientes)
+                        startActivity(itemView.context, intent, null)
+                    }
+                    2 -> {
+                        val intent = Intent(itemView.context, Mesa_Activity::class.java)
+                        intent.putExtra("menu", menu)
+                        intent.putExtra("cliente", clientes)
+                        startActivity(itemView.context, intent, null)
+                    }
+                    3 -> {
+                        val intent = Intent(itemView.context, Empleados_Activity::class.java)
+                        startActivity(itemView.context, intent, null)
+                    }
+                    4 -> {
+                        val intent = Intent(itemView.context, Pedido_Activity::class.java)
+
+                        startActivity(itemView.context, intent, null)
+                    }
+                    5 -> {
+                        val intent = Intent(itemView.context, Diseno_Factura_Activity::class.java)
+                        startActivity(itemView.context, intent, null)
+                    }
 
                     /**2 -> return MenuFragment()
                     3 -> return MesaFragment()
@@ -75,42 +109,11 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
                     /*Snackbar.make(v, "Click en item $position",
                     Snackbar.LENGTH_LONG).setAction("Action", null).show()*/
 
+
+
             }
         }
     }
-
-    private fun IrAFactura(itemView: View) {
-        val intent = Intent(itemView.context, Diseno_Factura_Activity::class.java)
-        startActivity(itemView.context, intent, null)
-    }
-
-    private fun IrAPedido(itemView: View) {
-        val intent = Intent(itemView.context, Pedido_Activity::class.java)
-        intent.putExtra("cliente", data)
-        startActivity(itemView.context, intent, null)
-    }
-
-    private fun IrAEmpleado(itemView: View) {
-        val intent = Intent(itemView.context, Empleados_Activity::class.java)
-        startActivity(itemView.context, intent, null)
-
-    }
-
-    private fun IrAMesa(itemView: View) {
-        val intent = Intent(itemView.context, Mesa_Activity::class.java)
-        startActivity(itemView.context, intent, null)
-    }
-
-    private fun IrAMenu(itemView: View) {
-        val intent = Intent(itemView.context, Menu_Activity::class.java)
-        startActivity(itemView.context, intent, null)
-    }
-
-    private fun IrAClientes(itemView: View) {
-        val intent = Intent(itemView.context, Cliente_Activity::class.java)
-        startActivity(itemView.context, intent,null)
-    }
-
 
     override fun onBindViewHolder(viewHolder: ViewHolder, i: Int) {
         viewHolder.itemTitle.text = titles[i]

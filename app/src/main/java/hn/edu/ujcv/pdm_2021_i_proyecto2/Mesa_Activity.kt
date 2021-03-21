@@ -11,10 +11,13 @@ import java.lang.StringBuilder
 class Mesa_Activity : AppCompatActivity() {
     private val Mesa : HashMap<Int, String> = hashMapOf()
     private var numero = 0
+    var clientes: ArrayList<String> = ArrayList()
+    var menu: ArrayList<String> = ArrayList()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mesa_)
         txvRegistrar.setOnClickListener { guardarMesa() }
+        datos()
     }
     private fun guardarMesa(){
         if (txtCodigo.text.isNotEmpty() && txtDescripcion.text.isNotEmpty()){
@@ -40,5 +43,11 @@ class Mesa_Activity : AppCompatActivity() {
     fun cambioPantalla(view: View){
         val cambio = Intent(this, MainActivity::class.java)
         startActivity(cambio)
+    }
+    fun datos(){
+        var intent = intent
+        clientes= intent.getSerializableExtra("cliente") as ArrayList<String>
+        menu= intent.getSerializableExtra("menu") as ArrayList<String>
+        println("cliente + menu"+ clientes.toString() + menu.toString())
     }
 }

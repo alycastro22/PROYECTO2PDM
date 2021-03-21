@@ -11,12 +11,19 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.activity_main.*
 import android.graphics.Color
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 
 class MainActivity : AppCompatActivity() {
 
     private var layoutManager: RecyclerView.LayoutManager? = null
     private var adapter: RecyclerAdapter = RecyclerAdapter()
+    var valores : HashMap<Int,String> = hashMapOf()
+    var nombres: ArrayList<String> = ArrayList()
+    var platos: ArrayList<String> = ArrayList()
+
+
+    var valor =0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +38,21 @@ class MainActivity : AppCompatActivity() {
 
         adapter = RecyclerAdapter()
         recyclerView.adapter = adapter
+        println("ALUMNO adapter"+ this.valor.toString())
+        val bundle = intent.extras
+        var obtener =  bundle?.get("valor")
+        println("Obtenido"+ obtener.toString())
+
+
+        if (obtener==1){
+            cliente()
+        } else if (obtener==2){
+            menuc()
+        }
+
+
+
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -51,7 +73,20 @@ class MainActivity : AppCompatActivity() {
         }
     }
     fun cliente(){
-        val regresarMenu = Intent(this, MainActivity::class.java)
-        startActivity(regresarMenu)
+        //valores.put(1,"hola")
+        var intent   = intent
+        nombres= intent.getSerializableExtra("valorescliente") as ArrayList<String>
+        println("cliente obtener"+ this.valores.toString())
+
+        adapter.datos(nombres)
+    }
+    fun menuc(){
+        var intent   = intent
+        nombres= intent.getSerializableExtra("cliente") as ArrayList<String>
+        platos= intent.getSerializableExtra("plato") as ArrayList<String>
+        println("cliente obtener"+ this.valores.toString())
+
+        adapter.menu(nombres, platos)
+
     }
 }

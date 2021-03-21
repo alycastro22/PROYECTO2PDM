@@ -11,9 +11,14 @@ import java.lang.StringBuilder
 class Menu_Activity : AppCompatActivity() {
     private var Menu : HashMap<Int,String> = hashMapOf()
     private var numero = 0
+    var valor =0
+
+    var platillos:ArrayList<String> = ArrayList()
+    var valores:ArrayList<String> = ArrayList()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_)
+        datos()
         txvRegistrar.setOnClickListener{ guardarMenu() }
     }
     private fun guardarMenu(){
@@ -26,7 +31,8 @@ class Menu_Activity : AppCompatActivity() {
             dato.append(txtDescripcion.text.toString())
             Menu.put(numero,dato.toString())
             println(Menu.toMap())
-            Toast.makeText(this,"Pato guardado con exito", Toast.LENGTH_LONG).show()
+            platillos.add(txtNombre3.text.toString())
+            Toast.makeText(this,"Plato guardado con exito", Toast.LENGTH_LONG).show()
         }else{
             validar()
         }
@@ -45,8 +51,17 @@ class Menu_Activity : AppCompatActivity() {
             Toast.makeText(this, "Ingrese la descripción del platillo", Toast.LENGTH_LONG).show()
         }
     }
+    fun datos(){
+        var intent = intent
+        valores= intent.getSerializableExtra("cliente") as ArrayList<String>
+        println("cliente pedido"+this.valores.toString())
+    }
     fun cambioPantalla(view: View){
+        valor=2
         val cambio = Intent(this, MainActivity::class.java)
+        cambio.putExtra("valor", valor)
+        cambio.putExtra("plato", platillos)
+        cambio.putExtra("cliente", valores)
         startActivity(cambio)
     }
 }
