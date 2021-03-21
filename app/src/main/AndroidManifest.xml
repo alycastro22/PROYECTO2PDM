@@ -11,6 +11,18 @@
         android:theme="@style/Theme.PDM_2021_I_PROYECTO2">
         <activity android:name=".Diseno_Factura_Activity"></activity>
         <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.PDM_2021_I_PROYECTO2.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <activity
             android:name=".FacturaActivityListActivity"
             android:label="@string/title_facturaactivity_list"
             android:theme="@style/Theme.PDM_2021_I_PROYECTO2.NoActionBar">
@@ -34,16 +46,7 @@
         <activity android:name=".Pedido_Activity" />
         <activity android:name=".Mesa_Activity" />
         <activity android:name=".Empleados_Activity" />
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.PDM_2021_I_PROYECTO2.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
 
         <meta-data
             android:name="preloaded_fonts"
