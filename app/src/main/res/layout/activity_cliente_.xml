@@ -98,7 +98,8 @@
             android:layout_marginBottom="624dp"
             android:contentDescription="@string/todo1"
             android:rotation="180"
-            android:src="@drawable/retroceder"
+            android:onClick="cambioPantalla"
+            android:src="@drawable/volver1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

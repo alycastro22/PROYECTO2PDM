@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="puestos">
+        <item>Cajero</item>
+        <item>Gerente</item>
+        <item>Administrador</item>
+    </string-array>
+</resources>

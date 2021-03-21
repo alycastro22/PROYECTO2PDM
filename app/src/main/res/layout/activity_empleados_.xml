@@ -102,13 +102,14 @@
             android:layout_marginBottom="624dp"
             android:contentDescription="@string/todo1"
             android:rotation="180"
+            android:onClick="cambioPantallaEmpleados"
             android:src="@drawable/retroceder"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <Spinner
-            android:id="@+id/spinnerPedido1"
+            android:id="@+id/spinnerPuesto"
             android:layout_width="220dp"
             android:layout_height="40dp"
             android:layout_marginStart="91dp"

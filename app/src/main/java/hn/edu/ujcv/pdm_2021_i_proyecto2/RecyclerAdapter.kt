@@ -71,6 +71,10 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
                         val intent = Intent(itemView.context, Pedido_Activity::class.java)
                         startActivity(itemView.context, intent, null)
                     }
+                    5 -> {
+                        val intent = Intent(itemView.context, Diseno_Factura_Activity::class.java)
+                        startActivity(itemView.context, intent, null)
+                    }
 
                     /**2 -> return MenuFragment()
                     3 -> return MesaFragment()
