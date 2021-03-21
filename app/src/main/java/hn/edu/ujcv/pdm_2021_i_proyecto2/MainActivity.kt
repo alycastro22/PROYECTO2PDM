@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     var valores : HashMap<Int,String> = hashMapOf()
     var nombres: ArrayList<String> = ArrayList()
     var platos: ArrayList<String> = ArrayList()
+    var empleado : ArrayList<String> = ArrayList()
 
 
     var valor =0
@@ -46,14 +47,15 @@ class MainActivity : AppCompatActivity() {
 
         if (obtener==1){
             cliente()
-        } else if (obtener==2){
+        } else if (obtener==2) {
             menuc()
+        }else if(obtener == 3){
+            empleadoc()
         }
 
-
-
-
     }
+
+
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -88,5 +90,14 @@ class MainActivity : AppCompatActivity() {
 
         adapter.menu(nombres, platos)
 
+    }
+
+     fun empleadoc() {
+        var intent = intent
+         nombres= intent.getSerializableExtra("cliente") as ArrayList<String>
+         platos= intent.getSerializableExtra("plato") as ArrayList<String>
+         empleado = intent.getSerializableExtra("empleados") as ArrayList<String>
+         println("Empleados obtner"+this.valores.toString())
+         adapter.empleados(nombres, platos,empleado)
     }
 }

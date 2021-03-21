@@ -14,7 +14,8 @@ import java.lang.StringBuilder
 class Empleados_Activity : AppCompatActivity() {
 
     private val Empleado : ArrayList<String> = arrayListOf()
-
+    var valores:ArrayList<String> = ArrayList()
+    var valor =0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_empleados_)
@@ -23,8 +24,11 @@ class Empleados_Activity : AppCompatActivity() {
     }
 
     fun cambioPantallaEmpleados(view: View){
-        val cambio = Intent(this, MainActivity::class.java)
-        startActivity(cambio)
+            valor=2
+            val cambio = Intent(this, MainActivity::class.java)
+            cambio.putExtra("valor", valor)
+            cambio.putExtra("cliente", valores)
+            startActivity(cambio)
     }
 
     private fun inicializador() {
@@ -53,6 +57,10 @@ class Empleados_Activity : AppCompatActivity() {
         if (txtNombre3.text.isEmpty()){
             Toast.makeText(this, "Ingrese el nombre del empleado", Toast.LENGTH_LONG).show()
         }
-
+    }
+    fun datos(){
+        var intent = intent
+        valores= intent.getSerializableExtra("empleado") as ArrayList<String>
+        println("cliente pedido"+this.valores.toString())
     }
 }

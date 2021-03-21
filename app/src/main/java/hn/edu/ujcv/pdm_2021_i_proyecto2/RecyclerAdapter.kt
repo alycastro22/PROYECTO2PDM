@@ -19,10 +19,10 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
     var clientes: ArrayList<String> = ArrayList()
     var menu: ArrayList<String> = ArrayList()
+    var empleado: ArrayList<String> = ArrayList()
 
 
     fun datos (cliente: ArrayList<String>) {
-
         this.clientes = cliente
         println("Recycler dato"+ clientes.toString())
 
@@ -33,6 +33,12 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
         this.menu = menus
         println("Menu"+ clientes.toString() + menu.toString() )
 
+    }
+    fun empleados(cliente: ArrayList<String>, menus: ArrayList<String>, empleado: ArrayList<String>){
+        this.clientes = cliente
+        this.menu = menus
+        this.empleado = empleado
+        println(("Menu"+ clientes.toString()+ "Menu" + menu.toString()+"Empleado"+ empleado.toString()))
     }
 
 
@@ -83,10 +89,12 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
                         val intent = Intent(itemView.context, Mesa_Activity::class.java)
                         intent.putExtra("menu", menu)
                         intent.putExtra("cliente", clientes)
+                        intent.putExtra("empleado", empleado)
                         startActivity(itemView.context, intent, null)
                     }
                     3 -> {
                         val intent = Intent(itemView.context, Empleados_Activity::class.java)
+
                         startActivity(itemView.context, intent, null)
                     }
                     4 -> {
