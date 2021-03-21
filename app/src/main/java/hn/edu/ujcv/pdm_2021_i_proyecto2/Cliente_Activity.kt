@@ -12,9 +12,12 @@ class Cliente_Activity : AppCompatActivity() {
 
     var valores : HashMap<Int,String> = hashMapOf()
     var  numero = 0
+    private var adapter: RecyclerAdapter = RecyclerAdapter()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cliente_)
+        txvBottom.setOnClickListener { guardaralumno() }
+        imageRetroceder.setOnClickListener { enviardatos()}
     }
 
     fun validaciones(){
@@ -41,8 +44,11 @@ class Cliente_Activity : AppCompatActivity() {
         }
 
     }
-    fun cambioPantalla(view: View){
-        val cambio = Intent(this, MainActivity::class.java)
-        startActivity(cambio)
+    fun enviardatos(){
+        val intent = Intent (this, MainActivity::class.java)
+        adapter.datos(valores)
+        println("ALUMNO adapter"+this.adapter.toString())
+        startActivity(intent)
+
     }
 }

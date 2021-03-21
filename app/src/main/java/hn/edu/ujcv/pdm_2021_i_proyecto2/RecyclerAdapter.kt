@@ -17,6 +17,15 @@ import androidx.viewpager2.adapter.FragmentViewHolder
 
 class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
+    var data: HashMap<Int, String> =  hashMapOf()
+
+    fun datos (clientes: HashMap<Int, String>) {
+
+        this.data = clientes
+        println("Recycler dato"+ data.toString())
+
+    }
+
     private val titles = arrayOf("Clientes",
         "Menu", "Mesa", "Empleados",
         "Pedido", "Factura")
