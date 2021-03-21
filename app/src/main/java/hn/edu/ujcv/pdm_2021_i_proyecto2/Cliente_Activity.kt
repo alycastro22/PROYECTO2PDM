@@ -41,13 +41,15 @@ class Cliente_Activity : AppCompatActivity() {
             dato.append(txtCorreo.text.toString())
             valores.put(numero, dato.toString())
 
+        }else{
+            validaciones()
         }
 
     }
     fun enviardatos(){
         val intent = Intent (this, MainActivity::class.java)
         adapter.datos(valores)
-        println("ALUMNO adapter"+this.adapter.toString())
+        println("ALUMNO adapter"+ this.adapter.toString())
         startActivity(intent)
 
     }
