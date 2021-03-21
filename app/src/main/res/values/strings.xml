@@ -27,7 +27,12 @@
     <string name="txvPedidos">Pedidos</string>
     <string name="spinnerCliente">Cliente</string>
     <string name="spinnerVariosMenus">Varios Menus</string>
+    <string name="spinnerPedido1">Pedido</string>
     <string name="spinnerEmpleado">Empleado</string>
+    <string name="spinnerEmpleado1">Empleado</string>
+    <string name="txvfactura">Factura</string>
+    <string name="txtTotalPagar">Total a pagar</string>
+
 
 
     <string name="todo1">TODO</string>
@@ -35,5 +40,6 @@
     <string name="title_activity_prueba2">Prueba2</string>
     <string name="title_facturaactivity_list">FacturaActivity</string>
     <string name="title_facturaactivity_detail">FacturaActivity Detail</string>
+    <string name="todo">TODO</string>
 
 </resources>

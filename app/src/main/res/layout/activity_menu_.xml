@@ -25,7 +25,7 @@
 
 
         <TextView
-            android:id="@+id/txvPedidos"
+            android:id="@+id/txvFactura"
             android:layout_width="268dp"
             android:layout_height="41dp"
             android:layout_marginTop="112dp"
@@ -53,8 +53,8 @@
             android:text="@string/txtCodigo"
             android:textColor="#000000"
             android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="@+id/txvPedidos"
-            app:layout_constraintTop_toBottomOf="@+id/txvPedidos" />
+            app:layout_constraintEnd_toEndOf="@+id/txvFactura"
+            app:layout_constraintTop_toBottomOf="@+id/txvFactura" />
 
         <EditText
             android:id="@+id/txtNombre3"

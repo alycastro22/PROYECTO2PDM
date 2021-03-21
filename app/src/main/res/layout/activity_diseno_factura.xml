@@ -1,10 +1,10 @@
-
+<?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Empleados_Activity">
+    tools:context=".Pedido_Activity">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -13,16 +13,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        app:tabMode="fixed"
         app:tabGravity="fill"
-
-        />
+        app:tabMode="fixed" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/empleados2"
-        tools:context=".Empleados_Activity">
+        android:background="@drawable/fondofactura"
+        tools:context=".Pedido_Activity">
 
         <TextView
             android:id="@+id/txvFactura"
@@ -32,54 +30,16 @@
             android:layout_marginEnd="68dp"
             android:fontFamily="@font/arbutus_slab"
             android:gravity="center|center_vertical"
-            android:text="@string/txvEmpleados"
+            android:text="@string/txvfactura"
             android:textColor="@color/black"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/txtCodigo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="53dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="340dp"
-            android:autofillHints=""
-            android:ems="10"
-            android:fontFamily="@font/arbutus_slab"
-            android:gravity="center"
-            android:hint="@string/todo1"
-            android:inputType="textPersonName"
-            android:text="@string/txtCodigo"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txvFactura" />
-
-        <EditText
-            android:id="@+id/txtNombre3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="56dp"
-            android:autofillHints=""
-            android:ems="10"
-            android:fontFamily="@font/arbutus_slab"
-            android:gravity="center"
-            android:hint="@string/todo1"
-            android:inputType="textPersonName"
-            android:text="@string/txtNombre"
-            android:textColor="#000000"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.462"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtCodigo" />
-
         <TextView
             android:id="@+id/txvRegistrar"
             android:layout_width="270dp"
-            android:layout_height="70dp"
+            android:layout_height="0dp"
             android:layout_marginStart="68dp"
             android:layout_marginEnd="68dp"
             android:layout_marginBottom="61dp"
@@ -91,33 +51,69 @@
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTotalPagar" />
 
         <ImageView
             android:id="@+id/imageRetroceder"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_marginStart="19dp"
-            android:layout_marginEnd="352dp"
-            android:layout_marginBottom="624dp"
+            android:layout_marginEnd="340dp"
+            android:layout_marginBottom="750dp"
             android:contentDescription="@string/todo1"
             android:rotation="180"
             android:src="@drawable/retroceder"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Spinner
             android:id="@+id/spinnerPedido1"
             android:layout_width="220dp"
             android:layout_height="40dp"
-            android:layout_marginStart="91dp"
-            android:layout_marginTop="408dp"
-            android:layout_marginEnd="100dp"
+            android:layout_marginBottom="240dp"
+            app:layout_constraintBottom_toBottomOf="@+id/txvRegistrar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/spinnerEmpleado1"
+            android:layout_width="220dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="250dp"
+            app:layout_constraintBottom_toBottomOf="@+id/txvRegistrar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtTotalPagar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="304dp"
+            android:layout_marginBottom="258dp"
+            android:fontFamily="@font/arbutus_slab"
+            android:text="@string/txtTotalPagar"
+            android:textColor="#000000"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/txvRegistrar"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageFactura"
+            android:layout_width="240dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txtTotalPagar"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@drawable/iconofactura"
+            android:contentDescription="@string/todo" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

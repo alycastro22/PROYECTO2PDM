@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PDM_2021_I_PROYECTO2">
+        <activity android:name=".Diseno_Factura_Activity"></activity>
         <activity
             android:name=".FacturaActivityListActivity"
             android:label="@string/title_facturaactivity_list"
