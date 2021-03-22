@@ -24,10 +24,12 @@ class Pedido_Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pedido_)
         datos()
-        imageRetroceder.setOnClickListener { cambioPantalla() }
         agregarItemsClientes()
         agregarItemsEmpleado()
         agregarItemsMenu()
+        imageRetroceder.setOnClickListener { cambioPantalla() }
+        txvRegistrarP.setOnClickListener { guardarpedido() }
+
        // iniciabilizador()
     }
 
@@ -53,15 +55,15 @@ class Pedido_Activity : AppCompatActivity() {
         spinner.adapter = adapter
     }
     fun guardarpedido(){
-        if(txtCodigo.text.isNotEmpty() && txtNombre3.text.isNotEmpty()){
-            val dato = StringBuilder()
-            dato.append(spinnerClientes.selectedItem.toString().trim()).append("|")
-            dato.append(spinnerVariosMenus.selectedItem.toString().trim()).append("|")
-            dato.append(spinnerEmpleado1.selectedItem.toString().trim())
-            pedido.add(dato.toString())
-            println(pedido.toString() + "Datos de pedido")
-            Toast.makeText(this, "Pedido registrado con exito", Toast.LENGTH_LONG).show()
-        }
+
+        val dato = StringBuilder()
+        dato.append(spinnerClientes.selectedItem.toString().trim()).append("|")
+        dato.append(spinnerVariosMenus.selectedItem.toString().trim()).append("|")
+        dato.append(spinnerEmpleado1.selectedItem.toString().trim())
+        pedido.add(dato.toString())
+        println(pedido.toString() + "Datos de pedido")
+        Toast.makeText(this, "Pedido registrado con exito", Toast.LENGTH_LONG).show()
+
     }
 
     fun cambioPantalla() {

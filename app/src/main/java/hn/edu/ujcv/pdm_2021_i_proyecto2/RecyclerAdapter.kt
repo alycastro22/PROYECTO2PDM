@@ -50,13 +50,12 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
         this.empleado = empleado
         println(("empleado"+ clientes.toString()+ "Menu" + menu.toString()+"Empleado"+ empleado.toString() +  mesa.toString()))
     }
-    fun pedido(cliente: ArrayList<String>, menus: ArrayList<String>, mesas: ArrayList<String>, empleado: ArrayList<String>, pedidos: ArrayList<String>,){
+    fun pedido(cliente: ArrayList<String>, menus: ArrayList<String>,  empleado: ArrayList<String>, pedidos: ArrayList<String>,){
         this.clientes = cliente
         this.menu = menus
-        this.mesa = mesas
         this.empleado = empleado
         this.pedido = pedidos
-        println(("cliente"+ clientes.toString()+ "Menu" + menu.toString()+"Empleado"+ empleado.toString() + "Mesa"+ mesa.toString() + "pedido" + pedido.toString()))
+        println(("cliente"+ clientes.toString()+ "Menu" + menu.toString()+"Empleado"+ empleado.toString() + "Mesa"+ "pedido" + pedido.toString()))
     }
 
 
@@ -127,6 +126,8 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
                     }
                     5 -> {
                         val intent = Intent(itemView.context, Diseno_Factura_Activity::class.java)
+                        intent.putExtra("empleado", empleado)
+                        intent.putExtra("pedido", pedido)
                         startActivity(itemView.context, intent, null)
                     }
 

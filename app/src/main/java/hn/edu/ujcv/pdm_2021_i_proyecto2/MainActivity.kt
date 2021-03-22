@@ -119,10 +119,9 @@ class MainActivity : AppCompatActivity() {
         var intent = intent
         nombres= intent.getSerializableExtra("cliente") as ArrayList<String>
         platos= intent.getSerializableExtra("plato") as ArrayList<String>
-        mesas = intent.getSerializableExtra("mesa") as ArrayList<String>
         empleado = intent.getSerializableExtra("empleado") as ArrayList<String>
         pedido = intent.getSerializableExtra("pedido") as ArrayList<String>
         println("Pedido obtner"+this.valores.toString())
-        adapter.pedido(nombres, platos,mesas,empleado, pedido)
+        adapter.pedido(nombres, platos,empleado, pedido)
     }
 }
