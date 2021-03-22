@@ -38,9 +38,14 @@
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/facturaactivity_detail_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        android:layout_width="407dp"
+        android:layout_height="518dp"
+        app:layout_anchor="@+id/facturaactivity_detail_container"
+        app:layout_anchorGravity="center"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+    </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"

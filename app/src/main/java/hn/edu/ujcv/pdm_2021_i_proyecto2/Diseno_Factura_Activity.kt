@@ -7,6 +7,9 @@ import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.snackbar.Snackbar
+import hn.edu.ujcv.pdm_2021_i_proyecto2.dummy.DummyContent
 import kotlinx.android.synthetic.main.activity_diseno_factura.*
 import java.lang.StringBuilder
 
@@ -15,6 +18,8 @@ class Diseno_Factura_Activity : AppCompatActivity() {
     var empleados: ArrayList<String> = ArrayList()
     var pedido : ArrayList<String> = ArrayList()
     var factura : ArrayList<String> = ArrayList()
+
+    var dummyItem: DummyContent = DummyContent
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_diseno_factura)
@@ -24,10 +29,12 @@ class Diseno_Factura_Activity : AppCompatActivity() {
         txvRegistrar.setOnClickListener { guardar() }
         imageRetroceder.setOnClickListener { cambioPantallaFactura() }
         enviara.setOnClickListener { enviar() }
+
     }
 
     private fun enviar() {
         val enviarFactura = Intent(this, FacturaActivityListActivity::class.java)
+        dummyItem.enviarf(factura)
         startActivity(enviarFactura)
     }
 

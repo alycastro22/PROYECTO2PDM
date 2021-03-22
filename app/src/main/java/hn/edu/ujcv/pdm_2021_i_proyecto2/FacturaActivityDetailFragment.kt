@@ -22,6 +22,7 @@ class FacturaActivityDetailFragment : Fragment() {
      */
     private var item: DummyContent.DummyItem? = null
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -45,7 +46,7 @@ class FacturaActivityDetailFragment : Fragment() {
 
         // Show the dummy content as text in a TextView.
         item?.let {
-            rootView.findViewById<TextView>(R.id.facturaactivity_detail).text = it.details
+            rootView.findViewById<TextView>(R.id.facturaactivity_detail).text = it.details.toString()
         }
 
         return rootView

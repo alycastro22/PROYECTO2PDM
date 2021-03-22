@@ -22,10 +22,18 @@ object DummyContent {
     val ITEM_MAP: MutableMap<String, DummyItem> = HashMap()
 
     private val COUNT = 25
-    val factura : ArrayList<String> = ArrayList()
+    var factura : ArrayList<String> = ArrayList()
+    fun enviarf (factura: ArrayList<String>) {
+        this.factura = factura
+        println("Factura"+ factura.toString())
 
+    }
     init {
+
+
         // Add some sample items.
+        enviarf(factura)
+
             addItem(DummyItem("1", "Factura", factura))
     }
 
@@ -33,6 +41,8 @@ object DummyContent {
         ITEMS.add(item)
         ITEM_MAP.put(item.id, item)
     }
+
+
 
 
     /**

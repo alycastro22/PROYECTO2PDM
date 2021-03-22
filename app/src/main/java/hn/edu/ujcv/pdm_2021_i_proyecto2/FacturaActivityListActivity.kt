@@ -30,6 +30,9 @@ class FacturaActivityListActivity : AppCompatActivity() {
      * device.
      */
     private var twoPane: Boolean = false
+    //var factura : ArrayList<String> = ArrayList()
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,6 +41,7 @@ class FacturaActivityListActivity : AppCompatActivity() {
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
         toolbar.title = title
+        //datos()
 
         findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -75,6 +79,7 @@ class FacturaActivityListActivity : AppCompatActivity() {
                     val fragment = FacturaActivityDetailFragment().apply {
                         arguments = Bundle().apply {
                             putString(FacturaActivityDetailFragment.ARG_ITEM_ID, item.id)
+
                         }
                     }
                     parentActivity.supportFragmentManager
@@ -85,6 +90,7 @@ class FacturaActivityListActivity : AppCompatActivity() {
                     val intent =
                         Intent(v.context, FacturaActivityDetailActivity::class.java).apply {
                             putExtra(FacturaActivityDetailFragment.ARG_ITEM_ID, item.id)
+
                         }
                     v.context.startActivity(intent)
                 }
@@ -115,4 +121,9 @@ class FacturaActivityListActivity : AppCompatActivity() {
             val contentView: TextView = view.findViewById(R.id.content)
         }
     }
+   /* fun datos(){
+        var intent = intent
+        factura = intent.getSerializableExtra("factura") as ArrayList<String>
+        println("Factura"+this.factura.toString())
+    }*/
 }
