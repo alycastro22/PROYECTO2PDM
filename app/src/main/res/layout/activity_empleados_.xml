@@ -21,7 +21,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/empleados2"
+        android:background="@drawable/fondoempleados"
         tools:context=".Empleados_Activity">
 
         <TextView

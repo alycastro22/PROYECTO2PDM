@@ -41,5 +41,6 @@
     <string name="title_facturaactivity_list">FacturaActivity</string>
     <string name="title_facturaactivity_detail">FacturaActivity Detail</string>
     <string name="todo">TODO</string>
+    <string name="Pago">Total a Pagar</string>
 
 </resources>
