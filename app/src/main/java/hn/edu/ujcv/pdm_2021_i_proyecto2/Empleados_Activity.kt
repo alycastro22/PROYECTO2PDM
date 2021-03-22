@@ -57,6 +57,7 @@ class Empleados_Activity : AppCompatActivity() {
             Toast.makeText(this, "Empleado registrado con exito",Toast.LENGTH_LONG).show()
         }else{
             validar()
+
         }
     }
 

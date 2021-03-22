@@ -113,8 +113,7 @@ class Diseno_Factura_Activity : AppCompatActivity() {
         val intent = Intent(Intent.ACTION_SEND)
         intent.putExtra(Intent.EXTRA_EMAIL, to)
         intent.putExtra(Intent.EXTRA_SUBJECT, "FACTURA SAZÓN CATRACHO")
-        intent.putExtra(Intent.EXTRA_TEXT,  "factura N1" + "\n Cliente|     Menu    |Generada por:" + "\n"+spinnerClientes.selectedItem.toString()+ "\n tipo de pago:" +  spinnerPago.selectedItem.toString() + "\n total:" +  txttotalPagar.text.toString() +
-                "\n generada por:" + spinnerEmpleado1.selectedItem.toString())
+        intent.putExtra(Intent.EXTRA_TEXT,  "factura N1" + "\n Cliente|     Menu    |Generada por:" + "\n"+spinnerClientes.selectedItem.toString()+ "\n tipo de pago:" +  spinnerPago.selectedItem.toString() + "\n total:" +  txttotalPagar.text.toString())
 
         intent.setType("message/rfc822")
         startActivity(Intent.createChooser(intent, "Email"))

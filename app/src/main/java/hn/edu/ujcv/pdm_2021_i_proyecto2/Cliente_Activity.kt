@@ -45,6 +45,7 @@ class Cliente_Activity : AppCompatActivity() {
             dato.append(txtCorreo.text.toString())
             valores.put(numero, dato.toString())
             nombres.add(txtNombre.text.toString())
+            Toast.makeText(this, "Cliente registrado con exito", Toast.LENGTH_LONG).show()
             println("nombres"+ this.nombres.toString())
 
         }else{
