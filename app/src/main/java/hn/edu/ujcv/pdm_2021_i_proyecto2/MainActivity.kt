@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     var nombres: ArrayList<String> = ArrayList()
     var platos: ArrayList<String> = ArrayList()
     var empleado : ArrayList<String> = ArrayList()
+    var mesas : ArrayList<String> = ArrayList()
 
 
     var valor =0
@@ -50,6 +51,8 @@ class MainActivity : AppCompatActivity() {
         } else if (obtener==2) {
             menuc()
         }else if(obtener == 3){
+            mesac()
+        }else if(obtener == 4){
             empleadoc()
         }
 
@@ -91,13 +94,22 @@ class MainActivity : AppCompatActivity() {
         adapter.menu(nombres, platos)
 
     }
+    fun mesac() {
+        var intent = intent
+        nombres= intent.getSerializableExtra("cliente") as ArrayList<String>
+        platos= intent.getSerializableExtra("plato") as ArrayList<String>
+        mesas = intent.getSerializableExtra("mesa") as ArrayList<String>
+        println("Empleados obtner"+this.nombres.toString() + mesas.toString() + platos.toString())
+        adapter.mesai(nombres, platos,mesas)
+    }
 
      fun empleadoc() {
         var intent = intent
          nombres= intent.getSerializableExtra("cliente") as ArrayList<String>
          platos= intent.getSerializableExtra("plato") as ArrayList<String>
-         empleado = intent.getSerializableExtra("empleados") as ArrayList<String>
+         mesas = intent.getSerializableExtra("mesa") as ArrayList<String>
+         empleado = intent.getSerializableExtra("empleado") as ArrayList<String>
          println("Empleados obtner"+this.valores.toString())
-         adapter.empleados(nombres, platos,empleado)
+         adapter.empleados(nombres, platos,mesas,empleado)
     }
 }

@@ -19,6 +19,7 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
     var clientes: ArrayList<String> = ArrayList()
     var menu: ArrayList<String> = ArrayList()
+    var mesa: ArrayList<String> = ArrayList()
     var empleado: ArrayList<String> = ArrayList()
 
 
@@ -34,11 +35,19 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
         println("Menu"+ clientes.toString() + menu.toString() )
 
     }
-    fun empleados(cliente: ArrayList<String>, menus: ArrayList<String>, empleado: ArrayList<String>){
+
+    fun mesai(cliente: ArrayList<String>, menus: ArrayList<String>, mesas: ArrayList<String>){
         this.clientes = cliente
         this.menu = menus
+        this.mesa = mesas
+        println(("cliente"+ clientes.toString()+ "Menu" + menu.toString()+"Mesa"+ mesa.toString()))
+    }
+    fun empleados(cliente: ArrayList<String>, menus: ArrayList<String>,mesas: ArrayList<String>, empleado: ArrayList<String>){
+        this.clientes = cliente
+        this.menu = menus
+        this.mesa = mesas
         this.empleado = empleado
-        println(("Menu"+ clientes.toString()+ "Menu" + menu.toString()+"Empleado"+ empleado.toString()))
+        println(("cliente"+ clientes.toString()+ "Menu" + menu.toString()+"Empleado"+ empleado.toString() +  mesa.toString()))
     }
 
 
@@ -89,12 +98,14 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
                         val intent = Intent(itemView.context, Mesa_Activity::class.java)
                         intent.putExtra("menu", menu)
                         intent.putExtra("cliente", clientes)
-                        intent.putExtra("empleado", empleado)
+
                         startActivity(itemView.context, intent, null)
                     }
                     3 -> {
                         val intent = Intent(itemView.context, Empleados_Activity::class.java)
-
+                        intent.putExtra("menu", menu)
+                        intent.putExtra("cliente", clientes)
+                        intent.putExtra("mesa", mesa)
                         startActivity(itemView.context, intent, null)
                     }
                     4 -> {

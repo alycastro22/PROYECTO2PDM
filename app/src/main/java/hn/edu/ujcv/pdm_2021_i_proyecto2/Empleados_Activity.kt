@@ -14,20 +14,27 @@ import java.lang.StringBuilder
 class Empleados_Activity : AppCompatActivity() {
 
     private val Empleado : ArrayList<String> = arrayListOf()
-    var valores:ArrayList<String> = ArrayList()
+    var clientes:ArrayList<String> = ArrayList()
+    var mesas:ArrayList<String> = ArrayList()
+    var menus:ArrayList<String> = ArrayList()
+    var empleados:ArrayList<String> = ArrayList()
     var valor =0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_empleados_)
         inicializador()
+        datos()
         txvRegistrar.setOnClickListener { guardarempleado() }
     }
 
     fun cambioPantallaEmpleados(view: View){
-            valor=2
+            valor=4
             val cambio = Intent(this, MainActivity::class.java)
-            cambio.putExtra("valor", valor)
-            cambio.putExtra("cliente", valores)
+                cambio.putExtra("valor", valor)
+                cambio.putExtra("plato", menus)
+                cambio.putExtra("cliente", clientes)
+                cambio.putExtra("mesa", mesas)
+                cambio.putExtra("empleado", empleados)
             startActivity(cambio)
     }
 
@@ -60,7 +67,9 @@ class Empleados_Activity : AppCompatActivity() {
     }
     fun datos(){
         var intent = intent
-        valores= intent.getSerializableExtra("empleado") as ArrayList<String>
-        println("cliente pedido"+this.valores.toString())
+        clientes= intent.getSerializableExtra("cliente") as ArrayList<String>
+        menus= intent.getSerializableExtra("menu") as ArrayList<String>
+        mesas = intent.getSerializableExtra("mesa") as ArrayList<String>
+        println("cliente mesa"+this.mesas.toString()+ clientes.toString()+ menus.toString())
     }
 }

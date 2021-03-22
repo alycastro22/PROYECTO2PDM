@@ -13,6 +13,9 @@ class Mesa_Activity : AppCompatActivity() {
     private var numero = 0
     var clientes: ArrayList<String> = ArrayList()
     var menu: ArrayList<String> = ArrayList()
+    var mesa: ArrayList<String> = ArrayList()
+    var valor =0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mesa_)
@@ -27,6 +30,7 @@ class Mesa_Activity : AppCompatActivity() {
             dato.append(txtDescripcion.text.toString().trim())
             Mesa.put(numero, dato.toString())
             println(Mesa.toMap())
+            mesa.add(txtCodigo.text.toString())
             Toast.makeText(this,"Mesa guardada con exito",Toast.LENGTH_LONG).show()
         }else{
             validar()
@@ -42,6 +46,12 @@ class Mesa_Activity : AppCompatActivity() {
     }
     fun cambioPantalla(view: View){
         val cambio = Intent(this, MainActivity::class.java)
+        valor = 3
+        cambio.putExtra("valor", valor)
+        cambio.putExtra("plato", menu)
+        cambio.putExtra("cliente", clientes)
+        cambio.putExtra("mesa", mesa)
+        println("cliente + menu + mesa"+ clientes.toString() + menu.toString() + mesa.toString())
         startActivity(cambio)
     }
     fun datos(){
