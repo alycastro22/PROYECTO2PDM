@@ -1,5 +1,7 @@
 package hn.edu.ujcv.pdm_2021_i_proyecto2
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -22,6 +24,9 @@ class Diseno_Factura_Activity : AppCompatActivity() {
     var empleados: ArrayList<String> = ArrayList()
     var pedido : ArrayList<String> = ArrayList()
     var factura : ArrayList<String> = ArrayList()
+    var nombre = " "
+
+
 
     var dummyItem: DummyContent = DummyContent
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,6 +39,7 @@ class Diseno_Factura_Activity : AppCompatActivity() {
         txvRegistrar.setOnClickListener { guardar() }
         imageRetroceder.setOnClickListener { cambioPantallaFactura() }
         enviara.setOnClickListener { enviar() }
+        enviarf.setOnClickListener { enviarcorreo() }
 
     }
 
@@ -77,6 +83,21 @@ class Diseno_Factura_Activity : AppCompatActivity() {
         println(factura.toString())
         Toast.makeText(this, "Factura agregada con exito", Toast.LENGTH_LONG).show()
         enviara.visibility = View.VISIBLE
+
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Enviar factura por Correo")
+        builder.setMessage("¿Desea enviar factura por correo?")
+        builder.setPositiveButton("Enviar", { dialogInterface: DialogInterface, i: Int ->
+            txtcorreo.visibility = View.VISIBLE
+            enviarf.visibility = View.VISIBLE
+
+        })
+        builder.setNegativeButton("No enviar", { dialogInterface: DialogInterface, i: Int ->
+            Toast.makeText(this, "Factura agregada con exito", Toast.LENGTH_LONG)
+        })
+        builder.show()
+
+
     }
 
     fun datos(){
@@ -84,5 +105,18 @@ class Diseno_Factura_Activity : AppCompatActivity() {
         pedido = intent.getSerializableExtra("pedido") as ArrayList<String>
         empleados = intent.getSerializableExtra("empleado") as ArrayList<String>
         println("cliente pedido"+this.pedido.toString()+  "empleado pedido"+this.empleados.toString())
+    }
+
+    fun enviarcorreo(){
+
+        var to = arrayOf(txtcorreo.text.toString(), "aramel08ramos@gmail.com", "nahomi.martinez@ujcv.edu.hn", "stephany.carbajal1@ujcv.edu.hn", "allisson.castro@ujcv.edu.hn")
+        val intent = Intent(Intent.ACTION_SEND)
+        intent.putExtra(Intent.EXTRA_EMAIL, to)
+        intent.putExtra(Intent.EXTRA_SUBJECT, "FACTURA SAZÓN CATRACHO")
+        intent.putExtra(Intent.EXTRA_TEXT,  "factura N1" + "\n Cliente|     Menu    |Generada por:" + "\n"+spinnerClientes.selectedItem.toString()+ "\n tipo de pago:" +  spinnerPago.selectedItem.toString() + "\n total:" +  txttotalPagar.text.toString() +
+                "\n generada por:" + spinnerEmpleado1.selectedItem.toString())
+
+        intent.setType("message/rfc822")
+        startActivity(Intent.createChooser(intent, "Email"))
     }
 }

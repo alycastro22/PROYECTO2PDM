@@ -8,13 +8,6 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tab_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        app:tabGravity="fill"
-        app:tabMode="fixed" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -24,102 +17,100 @@
 
         <TextView
             android:id="@+id/txvFactura"
-            android:layout_width="268dp"
-            android:layout_height="41dp"
-            android:layout_marginStart="75dp"
-            android:layout_marginTop="136dp"
-            android:layout_marginEnd="68dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="71dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="71dp"
+            android:layout_marginBottom="359dp"
             android:fontFamily="@font/arbutus_slab"
             android:gravity="center|center_vertical"
             android:text="@string/txvfactura"
             android:textColor="@color/black"
             android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/enviara"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/txvRegistrar"
-            android:layout_width="270dp"
-            android:layout_height="70dp"
-            android:layout_marginStart="70dp"
-            android:layout_marginTop="524dp"
-            android:layout_marginEnd="71dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="69dp"
+            android:layout_marginEnd="69dp"
+            android:layout_marginBottom="34dp"
             android:background="@drawable/btn_boton"
             android:fontFamily="@font/arbutus_slab"
             android:gravity="center"
             android:text="@string/txvBottom"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/txtcorreo"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/spinnerEmpleado1" />
 
         <ImageView
             android:id="@+id/imageRetroceder"
-            android:layout_width="40dp"
+            android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_marginStart="31dp"
-            android:layout_marginTop="60dp"
-            android:layout_marginEnd="340dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginEnd="58dp"
+            android:layout_marginBottom="41dp"
             android:contentDescription="@string/todo1"
             android:rotation="180"
             android:src="@drawable/volver1"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/txvFactura"
+            app:layout_constraintEnd_toStartOf="@+id/imageFactura"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@+id/imageFactura" />
 
         <Spinner
             android:id="@+id/spinnerClientes"
             android:layout_width="220dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="96dp"
-            android:layout_marginTop="232dp"
-            android:layout_marginEnd="95dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="31dp"
             android:background="#7CFFFFFF"
+            app:layout_constraintBottom_toTopOf="@+id/spinnerPago"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/txvFactura" />
 
         <Spinner
             android:id="@+id/spinnerEmpleado1"
             android:layout_width="220dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="95dp"
-            android:layout_marginTop="368dp"
-            android:layout_marginEnd="96dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="51dp"
             android:background="#7CFFFFFF"
+            app:layout_constraintBottom_toTopOf="@+id/txvRegistrar"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/txttotalPagar" />
 
         <Spinner
             android:id="@+id/spinnerPago"
             android:layout_width="220dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="95dp"
-            android:layout_marginTop="300dp"
-            android:layout_marginEnd="96dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="49dp"
             android:background="#7CFFFFFF"
+            app:layout_constraintBottom_toTopOf="@+id/txttotalPagar"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/spinnerClientes" />
 
         <ImageView
             android:id="@+id/imageFactura"
-            android:layout_width="152dp"
-            android:layout_height="69dp"
-            android:layout_marginStart="243dp"
-            android:layout_marginTop="68dp"
-            android:layout_marginEnd="16dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="130dp"
+            android:layout_marginBottom="15dp"
             android:contentDescription="@string/todo"
+            app:layout_constraintBottom_toTopOf="@+id/txvFactura"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageRetroceder"
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@drawable/iconofactura" />
 
@@ -128,35 +119,66 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
-            android:layout_marginStart="339dp"
-            android:layout_marginTop="610dp"
             android:layout_marginEnd="16dp"
+            android:layout_marginBottom="175dp"
             android:contentDescription="@string/todo1"
             android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txvFactura"
             app:srcCompat="@drawable/eye"
             tools:ignore="MissingConstraints" />
 
         <EditText
             android:id="@+id/txttotalPagar"
             android:layout_width="219dp"
-            android:layout_height="51dp"
-            android:layout_marginStart="93dp"
-            android:layout_marginTop="440dp"
-            android:layout_marginEnd="99dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="35dp"
             android:ems="10"
             android:hint="@string/Pago"
             android:inputType="numberDecimal"
             android:textAlignment="center"
             android:textColorHint="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/spinnerEmpleado1"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/spinnerPago" />
+
+        <EditText
+            android:id="@+id/txtcorreo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="23dp"
+            android:layout_marginBottom="88dp"
+            android:autofillHints=""
+            android:backgroundTint="@color/white"
+            android:ems="8"
+            android:gravity="center"
+            android:hint="@string/txtCorreo"
+            android:inputType="textPersonName"
+            android:textColor="#fff"
+            android:textColorHint="#fff"
+            android:textSize="24sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/txvRegistrar"
+            app:layout_constraintTop_toBottomOf="@+id/txvRegistrar" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/enviarf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="132dp"
+        android:contentDescription="@string/todo1"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_dialog_email"
+        tools:ignore="MissingConstraints" />
 
 
 </FrameLayout>
