@@ -20,6 +20,7 @@ class Pedido_Activity : AppCompatActivity() {
         setContentView(R.layout.activity_pedido_)
         datos()
         imageRetroceder.setOnClickListener { cambioPantalla() }
+        agregarItemsClientes()
        // iniciabilizador()
     }
 
