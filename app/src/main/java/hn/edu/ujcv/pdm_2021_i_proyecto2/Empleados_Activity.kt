@@ -18,15 +18,17 @@ class Empleados_Activity : AppCompatActivity() {
     var menus : ArrayList<String> = ArrayList()
     var empleados : ArrayList<String> = ArrayList()
     var valor =0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_empleados_)
         inicializador()
         datos()
         txvRegistrar.setOnClickListener { guardarempleado() }
+        imageRetroceder.setOnClickListener{cambioPantalla()}
     }
 
-    fun cambioPantallaEmpleados(){
+    fun cambioPantalla(){
             valor=4
             val cambio = Intent(this, MainActivity::class.java)
                 cambio.putExtra("valor", valor)
@@ -38,22 +40,25 @@ class Empleados_Activity : AppCompatActivity() {
     }
 
     private fun inicializador() {
-        val spinner: Spinner = spinnerClientes
         val adapter : ArrayAdapter<CharSequence> = ArrayAdapter.createFromResource(this,
         R.array.puestos, android.R.layout.simple_spinner_item)
-        spinner.adapter = adapter
+        spinnerClientes.adapter = adapter
     }
 
     private fun guardarempleado(){
         if(txtCodigo.text.isNotEmpty() && txtNombre3.text.isNotEmpty()){
             val dato = StringBuilder()
             dato.append(txtCodigo.text.toString().trim()).append("|")
-            dato.append(txtNombre3.text.toString().trim())
+            dato.append(txtNombre3.text.toString().trim()).append("|")
+            dato.append(spinnerClientes.selectedItem.toString().trim())
             Empleado.add(dato.toString())
             empleados.add(txtNombre3.text.toString())
+            println(Empleado.toString() + "Datos de empleado")
             Toast.makeText(this, "Empleado registrado con exito",Toast.LENGTH_LONG).show()
         }else{
             validar()
+
+
         }
     }
 

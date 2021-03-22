@@ -23,18 +23,12 @@ class Pedido_Activity : AppCompatActivity() {
        // iniciabilizador()
     }
 
-    fun iniciabilizador(){
-        val spinnerC : Spinner = spinnerClientes
-        val spinnerM : Spinner = spinnerVariosMenus
-        val spinnerE : Spinner = spinnerEmpleado1
-
-        val adapterCliente : ArrayAdapter<CharSequence> = ArrayAdapter.createFromResource(this, clientes.size, android.R.layout.simple_spinner_item)
-        spinnerC.adapter = adapterCliente
-
-        val adapterMenu : ArrayAdapter<CharSequence> = ArrayAdapter.createFromResource(this, menus.size, android.R.layout.simple_spinner_item)
-        spinnerM.adapter = adapterMenu
-
-
+    fun agregarItemsClientes(){
+        val spinner : Spinner = findViewById(R.id.spinnerClientes)
+        val adapter : ArrayAdapter<String> = ArrayAdapter(this,
+        android.R.layout.simple_spinner_item, clientes)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_item)
+        spinner.adapter = adapter
     }
     fun guardarpedido(){
 

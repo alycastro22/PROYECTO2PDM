@@ -102,7 +102,6 @@
             android:layout_marginBottom="624dp"
             android:contentDescription="@string/todo1"
             android:rotation="180"
-            android:onClick="cambioPantallaEmpleados"
             android:src="@drawable/retroceder"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
