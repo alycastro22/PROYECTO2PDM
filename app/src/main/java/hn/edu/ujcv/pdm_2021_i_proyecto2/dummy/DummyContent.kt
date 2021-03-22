@@ -1,5 +1,6 @@
 package hn.edu.ujcv.pdm_2021_i_proyecto2.dummy
 
+import android.widget.Toast
 import java.util.ArrayList
 import java.util.HashMap
 
@@ -28,13 +29,11 @@ object DummyContent {
         println("Factura"+ factura.toString())
 
     }
+
     init {
-
-
-        // Add some sample items.
         enviarf(factura)
+        addItem(DummyItem("1", "Factura", factura.toString()))
 
-            addItem(DummyItem("1", "Factura", factura))
     }
 
     private fun addItem(item: DummyItem) {
@@ -43,12 +42,10 @@ object DummyContent {
     }
 
 
-
-
     /**
      * A dummy item representing a piece of content.
      */
-    data class DummyItem(val id: String, val content: String, val details: ArrayList<String>) {
-        override fun toString(): String = content
+    data class DummyItem(val id: String, val content: String, var details: String) {
+        override fun toString(): String = details
     }
 }
