@@ -21,11 +21,12 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
     var menu: ArrayList<String> = ArrayList()
     var mesa: ArrayList<String> = ArrayList()
     var empleado: ArrayList<String> = ArrayList()
+    var pedido : ArrayList<String> = ArrayList()
 
 
     fun datos (cliente: ArrayList<String>) {
         this.clientes = cliente
-        println("Recycler dato"+ clientes.toString())
+        println("cliente"+ clientes.toString())
 
     }
     fun menu (cliente: ArrayList<String>, menus: ArrayList<String>) {
@@ -47,7 +48,15 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
         this.menu = menus
         this.mesa = mesas
         this.empleado = empleado
-        println(("cliente"+ clientes.toString()+ "Menu" + menu.toString()+"Empleado"+ empleado.toString() +  mesa.toString()))
+        println(("empleado"+ clientes.toString()+ "Menu" + menu.toString()+"Empleado"+ empleado.toString() +  mesa.toString()))
+    }
+    fun pedido(cliente: ArrayList<String>, menus: ArrayList<String>, mesas: ArrayList<String>, empleado: ArrayList<String>, pedidos: ArrayList<String>,){
+        this.clientes = cliente
+        this.menu = menus
+        this.mesa = mesas
+        this.empleado = empleado
+        this.pedido = pedidos
+        println(("cliente"+ clientes.toString()+ "Menu" + menu.toString()+"Empleado"+ empleado.toString() + "Mesa"+ mesa.toString() + "pedido" + pedido.toString()))
     }
 
 
@@ -110,7 +119,10 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
                     }
                     4 -> {
                         val intent = Intent(itemView.context, Pedido_Activity::class.java)
-
+                        intent.putExtra("menu", menu)
+                        intent.putExtra("cliente", clientes)
+                        intent.putExtra("mesa", mesa)
+                        intent.putExtra("empleado", empleado)
                         startActivity(itemView.context, intent, null)
                     }
                     5 -> {

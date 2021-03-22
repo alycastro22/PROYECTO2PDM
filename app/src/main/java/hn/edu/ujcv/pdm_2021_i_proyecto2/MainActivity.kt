@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     var platos: ArrayList<String> = ArrayList()
     var empleado : ArrayList<String> = ArrayList()
     var mesas : ArrayList<String> = ArrayList()
+    var pedido : ArrayList<String> = ArrayList()
 
 
     var valor =0
@@ -54,6 +55,8 @@ class MainActivity : AppCompatActivity() {
             mesac()
         }else if(obtener == 4){
             empleadoc()
+        }else if (obtener == 5){
+            pedidoc()
         }
 
     }
@@ -89,7 +92,7 @@ class MainActivity : AppCompatActivity() {
         var intent   = intent
         nombres= intent.getSerializableExtra("cliente") as ArrayList<String>
         platos= intent.getSerializableExtra("plato") as ArrayList<String>
-        println("cliente obtener"+ this.valores.toString())
+        println("Menu obtener"+ this.valores.toString())
 
         adapter.menu(nombres, platos)
 
@@ -99,7 +102,7 @@ class MainActivity : AppCompatActivity() {
         nombres= intent.getSerializableExtra("cliente") as ArrayList<String>
         platos= intent.getSerializableExtra("plato") as ArrayList<String>
         mesas = intent.getSerializableExtra("mesa") as ArrayList<String>
-        println("Empleados obtner"+this.nombres.toString() + mesas.toString() + platos.toString())
+        println("Mesa obtner"+this.nombres.toString() + mesas.toString() + platos.toString())
         adapter.mesai(nombres, platos,mesas)
     }
 
@@ -111,5 +114,15 @@ class MainActivity : AppCompatActivity() {
          empleado = intent.getSerializableExtra("empleado") as ArrayList<String>
          println("Empleados obtner"+this.valores.toString())
          adapter.empleados(nombres, platos,mesas,empleado)
+    }
+    fun pedidoc(){
+        var intent = intent
+        nombres= intent.getSerializableExtra("cliente") as ArrayList<String>
+        platos= intent.getSerializableExtra("plato") as ArrayList<String>
+        mesas = intent.getSerializableExtra("mesa") as ArrayList<String>
+        empleado = intent.getSerializableExtra("empleado") as ArrayList<String>
+        pedido = intent.getSerializableExtra("pedido") as ArrayList<String>
+        println("Pedido obtner"+this.valores.toString())
+        adapter.pedido(nombres, platos,mesas,empleado, pedido)
     }
 }

@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
@@ -14,6 +15,7 @@ import java.lang.StringBuilder
 class Empleados_Activity : AppCompatActivity() {
 
     private val Empleado : ArrayList<String> = arrayListOf()
+    val spinner : Spinner = spinnerClientes
     var clientes:ArrayList<String> = ArrayList()
     var mesas:ArrayList<String> = ArrayList()
     var menus:ArrayList<String> = ArrayList()
@@ -39,7 +41,6 @@ class Empleados_Activity : AppCompatActivity() {
     }
 
     private fun inicializador() {
-        val spinner : Spinner = spinnerPuesto
         val adapter : ArrayAdapter<CharSequence> = ArrayAdapter.createFromResource(this,
         R.array.puestos, android.R.layout.simple_spinner_item)
         spinner.adapter = adapter
@@ -49,8 +50,11 @@ class Empleados_Activity : AppCompatActivity() {
         if(txtCodigo.text.isNotEmpty() && txtNombre3.text.isNotEmpty()){
             val dato = StringBuilder()
             dato.append(txtCodigo.text.toString().trim()).append("|")
-            dato.append(txtNombre3.text.toString().trim())
+            dato.append(txtNombre3.text.toString().trim()).append("|")
+            dato.append(spinner.onItemSelectedListener.toString())
             Empleado.add(dato.toString())
+            println("Empleado gudar Permanente"+ Empleado.toString())
+            empleados.add(txtNombre3.text.toString())
             Toast.makeText(this, "Empleado registrado con exito",Toast.LENGTH_LONG).show()
         }else{
             validar()

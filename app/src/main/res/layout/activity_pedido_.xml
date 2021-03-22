@@ -66,15 +66,16 @@
             android:contentDescription="@string/todo1"
             android:rotation="180"
             android:src="@drawable/retroceder"
-            app:layout_constraintBottom_toTopOf="@+id/spinnerPuesto"
+            app:layout_constraintBottom_toTopOf="@+id/spinnerClientes"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Spinner
-            android:id="@+id/spinnerPuesto"
+            android:id="@+id/spinnerClientes"
             android:layout_width="220dp"
             android:layout_height="0dp"
             android:layout_marginBottom="76dp"
+            android:background="#7CFFFFFF"
             app:layout_constraintBottom_toTopOf="@+id/spinnerVariosMenus"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -85,16 +86,18 @@
             android:layout_width="220dp"
             android:layout_height="0dp"
             android:layout_marginBottom="90dp"
+            android:background="#7CFFFFFF"
             app:layout_constraintBottom_toTopOf="@+id/spinnerEmpleado1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinnerPuesto" />
+            app:layout_constraintTop_toBottomOf="@+id/spinnerClientes" />
 
         <Spinner
             android:id="@+id/spinnerEmpleado1"
             android:layout_width="220dp"
             android:layout_height="0dp"
             android:layout_marginBottom="120dp"
+            android:background="#7CFFFFFF"
             app:layout_constraintBottom_toTopOf="@+id/txvRegistrar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
