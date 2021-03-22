@@ -11,6 +11,10 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import hn.edu.ujcv.pdm_2021_i_proyecto2.dummy.DummyContent
 import kotlinx.android.synthetic.main.activity_diseno_factura.*
+import kotlinx.android.synthetic.main.activity_diseno_factura.imageRetroceder
+import kotlinx.android.synthetic.main.activity_diseno_factura.spinnerClientes
+import kotlinx.android.synthetic.main.activity_diseno_factura.txvRegistrar
+import kotlinx.android.synthetic.main.activity_empleados_.*
 import java.lang.StringBuilder
 
 class Diseno_Factura_Activity : AppCompatActivity() {
@@ -26,6 +30,7 @@ class Diseno_Factura_Activity : AppCompatActivity() {
         datos()
         agregarItemPedido()
         agregarItemEmpleado()
+        agregarItemPago()
         txvRegistrar.setOnClickListener { guardar() }
         imageRetroceder.setOnClickListener { cambioPantallaFactura() }
         enviara.setOnClickListener { enviar() }
@@ -56,11 +61,18 @@ class Diseno_Factura_Activity : AppCompatActivity() {
         adapterE.setDropDownViewResource(android.R.layout.simple_spinner_item)
         spinnerE.adapter = adapterE
     }
+    private fun agregarItemPago() {
+        val adapter : ArrayAdapter<CharSequence> = ArrayAdapter.createFromResource(this,
+                R.array.pago, android.R.layout.simple_spinner_item)
+        spinnerPago.adapter = adapter
+    }
 
     fun guardar(){
         val dato = StringBuilder()
         dato.append(spinnerEmpleado1.selectedItem.toString().trim()).append("|")
-        dato.append(spinnerClientes.selectedItem.toString().trim())
+        dato.append(spinnerPago.selectedItem.toString().trim()).append("|")
+        dato.append(spinnerClientes.selectedItem.toString().trim()).append("|")
+        dato.append(txttotalPagar.text.toString().trim())
         factura.add(dato.toString())
         println(factura.toString())
         Toast.makeText(this, "Factura agregada con exito", Toast.LENGTH_LONG).show()

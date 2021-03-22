@@ -44,7 +44,7 @@
             android:layout_width="270dp"
             android:layout_height="70dp"
             android:layout_marginStart="70dp"
-            android:layout_marginTop="508dp"
+            android:layout_marginTop="524dp"
             android:layout_marginEnd="71dp"
             android:background="@drawable/btn_boton"
             android:fontFamily="@font/arbutus_slab"
@@ -53,6 +53,7 @@
             android:textColor="#FFFFFF"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -75,10 +76,11 @@
             android:layout_width="220dp"
             android:layout_height="40dp"
             android:layout_marginStart="96dp"
-            android:layout_marginTop="221dp"
+            android:layout_marginTop="232dp"
             android:layout_marginEnd="95dp"
             android:background="#7CFFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -87,10 +89,24 @@
             android:layout_width="220dp"
             android:layout_height="40dp"
             android:layout_marginStart="95dp"
-            android:layout_marginTop="395dp"
+            android:layout_marginTop="368dp"
             android:layout_marginEnd="96dp"
             android:background="#7CFFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/spinnerPago"
+            android:layout_width="220dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="95dp"
+            android:layout_marginTop="300dp"
+            android:layout_marginEnd="96dp"
+            android:background="#7CFFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -124,18 +140,19 @@
             tools:ignore="MissingConstraints" />
 
         <EditText
-            android:id="@+id/totalPagar"
+            android:id="@+id/txttotalPagar"
             android:layout_width="219dp"
             android:layout_height="51dp"
             android:layout_marginStart="93dp"
-            android:layout_marginTop="309dp"
+            android:layout_marginTop="440dp"
             android:layout_marginEnd="99dp"
             android:ems="10"
             android:hint="@string/Pago"
-            android:textColorHint="@color/black"
-            android:textAlignment="center"
             android:inputType="numberDecimal"
+            android:textAlignment="center"
+            android:textColorHint="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
