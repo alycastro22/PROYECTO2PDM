@@ -2,6 +2,8 @@
 <resources>
     <string-array name="puestos">
         <item>Cajero</item>
+        <item>Vendedor</item>
+        <item>Mesero</item>
         <item>Gerente</item>
         <item>Administrador</item>
     </string-array>

@@ -112,21 +112,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/enviara"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_marginStart="338dp"
-            android:layout_marginTop="556dp"
-            android:layout_marginEnd="17dp"
-            android:contentDescription="@string/todo1"
-            android:visibility="invisible"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/eye"
-            tools:ignore="MissingConstraints" />
 
         <EditText
             android:id="@+id/txttotalPagar"

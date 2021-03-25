@@ -32,7 +32,7 @@ class Pedido_Activity : AppCompatActivity() {
         imageRetroceder.setOnClickListener { cambioPantalla() }
         txvRegistrarP.setOnClickListener { guardarpedido() }
         enviara.setOnClickListener { guardarmenu() }
-        Toast.makeText(this, "Añada la orden al pedido dando click en la comida deseada",Toast.LENGTH_LONG ).show()
+        Toast.makeText(this, "Añada la orden al pedido dando click en la comida deseada",Toast.LENGTH_SHORT).show()
 
        // iniciabilizador()
     }
@@ -73,7 +73,7 @@ class Pedido_Activity : AppCompatActivity() {
     }
     fun guardarmenu(){
         pedidoSel.add(spinnerVariosMenus.selectedItem.toString())
-        Toast.makeText(this, "Añada platillos requeridos y despues guarde",Toast.LENGTH_LONG ).show()
+        Toast.makeText(this, "Añada platillos requeridos y despues guarde",Toast.LENGTH_SHORT ).show()
 
     }
 

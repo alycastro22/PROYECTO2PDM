@@ -62,7 +62,7 @@ class Diseno_Factura_Activity : AppCompatActivity() {
         val cambio = Intent(this, MainActivity::class.java)
         cambio.putExtra("valor", valor)
         cambio.putExtra("menu", menus)
-        cambio.putExtra("cliente", clienteva)
+        cambio.putExtra("cliente", clientes)
         cambio.putExtra("mesa", mesas)
         cambio.putExtra("empleado", empleados)
         cambio.putExtra("empleado_sel", empleadova)
