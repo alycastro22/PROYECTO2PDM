@@ -17,140 +17,141 @@
 
         <TextView
             android:id="@+id/txvFactura"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="71dp"
-            android:layout_marginTop="100dp"
+            android:layout_width="270dp"
+            android:layout_height="97dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="71dp"
-            android:layout_marginBottom="359dp"
             android:fontFamily="@font/arbutus_slab"
             android:gravity="center|center_vertical"
             android:text="@string/txvfactura"
             android:textColor="@color/black"
             android:textSize="30sp"
-            app:layout_constraintBottom_toTopOf="@+id/enviara"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/txvRegistrar"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="69dp"
-            android:layout_marginEnd="69dp"
-            android:layout_marginBottom="34dp"
+            android:layout_width="274dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="556dp"
+            android:layout_marginEnd="73dp"
             android:background="@drawable/btn_boton"
             android:fontFamily="@font/arbutus_slab"
             android:gravity="center"
             android:text="@string/txvBottom"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/txtcorreo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinnerEmpleado1" />
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <Spinner
+            android:id="@+id/spinnerPedido"
+            android:layout_width="220dp"
+            android:layout_height="62dp"
+            android:layout_marginStart="90dp"
+            android:layout_marginTop="233dp"
+            android:layout_marginEnd="101dp"
+            android:background="#7CFFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
 
         <ImageView
             android:id="@+id/imageRetroceder"
-            android:layout_width="0dp"
+            android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_marginStart="31dp"
-            android:layout_marginTop="44dp"
-            android:layout_marginEnd="58dp"
-            android:layout_marginBottom="41dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="73dp"
+            android:layout_marginEnd="355dp"
             android:contentDescription="@string/todo1"
             android:rotation="180"
             android:src="@drawable/volver1"
-            app:layout_constraintBottom_toBottomOf="@+id/txvFactura"
-            app:layout_constraintEnd_toStartOf="@+id/imageFactura"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/imageFactura" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Spinner
             android:id="@+id/spinnerClientes"
             android:layout_width="220dp"
-            android:layout_height="0dp"
-            android:layout_marginBottom="31dp"
+            android:layout_height="62dp"
+            android:layout_marginStart="90dp"
+            android:layout_marginTop="144dp"
+            android:layout_marginEnd="101dp"
             android:background="#7CFFFFFF"
-            app:layout_constraintBottom_toTopOf="@+id/spinnerPago"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txvFactura" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Spinner
             android:id="@+id/spinnerEmpleado1"
             android:layout_width="220dp"
-            android:layout_height="0dp"
-            android:layout_marginBottom="51dp"
+            android:layout_height="62dp"
+            android:layout_marginStart="90dp"
+            android:layout_marginTop="393dp"
+            android:layout_marginEnd="101dp"
             android:background="#7CFFFFFF"
-            app:layout_constraintBottom_toTopOf="@+id/txvRegistrar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txttotalPagar" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Spinner
             android:id="@+id/spinnerPago"
             android:layout_width="220dp"
-            android:layout_height="0dp"
-            android:layout_marginBottom="49dp"
+            android:layout_height="62dp"
+            android:layout_marginStart="90dp"
+            android:layout_marginTop="314dp"
+            android:layout_marginEnd="101dp"
             android:background="#7CFFFFFF"
-            app:layout_constraintBottom_toTopOf="@+id/txttotalPagar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinnerClientes" />
-
-        <ImageView
-            android:id="@+id/imageFactura"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="130dp"
-            android:layout_marginBottom="15dp"
-            android:contentDescription="@string/todo"
-            app:layout_constraintBottom_toTopOf="@+id/txvFactura"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageRetroceder"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@drawable/iconofactura" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/enviara"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="175dp"
+            android:layout_marginStart="338dp"
+            android:layout_marginTop="556dp"
+            android:layout_marginEnd="17dp"
             android:contentDescription="@string/todo1"
             android:visibility="invisible"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txvFactura"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/eye"
             tools:ignore="MissingConstraints" />
 
         <EditText
             android:id="@+id/txttotalPagar"
             android:layout_width="219dp"
-            android:layout_height="0dp"
-            android:layout_marginBottom="35dp"
+            android:layout_height="62dp"
+            android:layout_marginStart="90dp"
+            android:layout_marginTop="474dp"
+            android:layout_marginEnd="102dp"
             android:ems="10"
             android:hint="@string/Pago"
             android:inputType="numberDecimal"
             android:textAlignment="center"
-            android:textColorHint="@color/black"
             android:textColor="@color/black"
-            app:layout_constraintBottom_toTopOf="@+id/spinnerEmpleado1"
+            android:textColorHint="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinnerPago" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/txtcorreo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="23dp"
-            android:layout_marginBottom="88dp"
+            android:layout_marginStart="91dp"
+            android:layout_marginTop="640dp"
+            android:layout_marginEnd="98dp"
             android:autofillHints=""
             android:backgroundTint="@color/white"
             android:ems="8"
@@ -161,25 +162,27 @@
             android:textColorHint="@color/black"
             android:textSize="24sp"
             android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/enviarf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginTop="643dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="32dp"
+            android:contentDescription="@string/todo1"
+            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/txvRegistrar"
-            app:layout_constraintTop_toBottomOf="@+id/txvRegistrar" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/ic_dialog_email"
+            tools:ignore="MissingConstraints" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/enviarf"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="132dp"
-        android:contentDescription="@string/todo1"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@android:drawable/ic_dialog_email"
-        tools:ignore="MissingConstraints" />
 
 
 </FrameLayout>
