@@ -59,9 +59,9 @@ class Menu_Activity : AppCompatActivity() {
         var intent = intent
         platillos = intent.getSerializableExtra("menu") as ArrayList<String>
         clientes = intent.getSerializableExtra("cliente") as ArrayList<String>
-        mesas = intent.getSerializableExtra("mesas") as ArrayList<String>
+        mesas = intent.getSerializableExtra("mesa") as ArrayList<String>
         empleados = intent.getSerializableExtra("empleado") as ArrayList<String>
-        empleadosSel = intent.getSerializableExtra("empelado_sel") as ArrayList<String>
+        empleadosSel = intent.getSerializableExtra("empleado_sel") as ArrayList<String>
         clientesSel = intent.getSerializableExtra("clientes_sel") as ArrayList<String>
         pedidoSel = intent.getSerializableExtra("pedido_sel") as ArrayList<String>
         println("Menu" + platillos.toString() + "clientes" + clientes.toString() +
@@ -70,11 +70,17 @@ class Menu_Activity : AppCompatActivity() {
                 "pedido selecionado"+pedidoSel.toString())
     }
     fun cambioPantalla(view: View){
-        valor=2
+        valor=5
         val cambio = Intent(this, MainActivity::class.java)
         cambio.putExtra("valor", valor)
-        cambio.putExtra("plato", platillos)
-        cambio.putExtra("cliente", valores)
+        cambio.putExtra("menu", platillos)
+        cambio.putExtra("cliente", clientes)
+        cambio.putExtra("mesa", mesas)
+        cambio.putExtra("empleado", empleados)
+        cambio.putExtra("empleado_sel", empleadosSel)
+        cambio.putExtra("clientes_sel", clientesSel)
+        cambio.putExtra("pedido_sel", pedidoSel)
+
         startActivity(cambio)
     }
 }

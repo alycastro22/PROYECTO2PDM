@@ -24,6 +24,8 @@ class MainActivity : AppCompatActivity() {
     var empleado : ArrayList<String> = ArrayList()
     var mesas : ArrayList<String> = ArrayList()
     var pedido : ArrayList<String> = ArrayList()
+    var empleadosel: ArrayList<String> = ArrayList()
+    var clientesel: ArrayList<String> = ArrayList()
 
 
     var valor =0
@@ -118,10 +120,15 @@ class MainActivity : AppCompatActivity() {
     fun pedidoc(){
         var intent = intent
         nombres= intent.getSerializableExtra("cliente") as ArrayList<String>
-        platos= intent.getSerializableExtra("plato") as ArrayList<String>
+        platos= intent.getSerializableExtra("menu") as ArrayList<String>
         empleado = intent.getSerializableExtra("empleado") as ArrayList<String>
-        pedido = intent.getSerializableExtra("pedido") as ArrayList<String>
+        pedido = intent.getSerializableExtra("pedido_sel") as ArrayList<String>
+        empleadosel = intent.getSerializableExtra("empleado_sel") as ArrayList<String>
+        clientesel = intent.getSerializableExtra("clientes_sel") as ArrayList<String>
+        mesas = intent.getSerializableExtra("mesa") as ArrayList<String>
+
+
         println("Pedido obtner"+this.valores.toString())
-        adapter.pedido(nombres, platos,empleado, pedido)
+        adapter.pedido(nombres, platos,empleado, pedido,clientesel, empleadosel, mesas)
     }
 }

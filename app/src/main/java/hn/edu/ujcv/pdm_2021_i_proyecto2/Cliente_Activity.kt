@@ -25,8 +25,10 @@ class Cliente_Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cliente_)
+        datos()
         txvBottom.setOnClickListener { guardaralumno() }
        imageRetroceder.setOnClickListener { enviardatos() }
+
     }
 
     fun validaciones(){
@@ -60,13 +62,19 @@ class Cliente_Activity : AppCompatActivity() {
 
     }
     fun enviardatos(){
-        val intent = Intent (this, MainActivity::class.java)
-        enviar = 1
+        val cambio = Intent (this, MainActivity::class.java)
+        enviar = 5
         //adapter.datos(valores)
-        intent.putExtra("valor", enviar)
-        intent.putExtra("valorescliente", nombres)
+        cambio.putExtra("valor", enviar)
+        cambio.putExtra("menu", menus)
+        cambio.putExtra("cliente", nombres)
+        cambio.putExtra("mesa", mesas)
+        cambio.putExtra("empleado", empleados)
+        cambio.putExtra("empleado_sel", empleadosSel)
+        cambio.putExtra("clientes_sel", clientesSel)
+        cambio.putExtra("pedido_sel", pedidoSel)
 
-        startActivity(intent)
+        startActivity(cambio)
         println("ALUMNO activity"+ this.nombres.toString())
         println("ALUMNO enviando"+ this.enviar.toString())
 
@@ -78,7 +86,7 @@ class Cliente_Activity : AppCompatActivity() {
         nombres = intent.getSerializableExtra("cliente") as ArrayList<String>
         mesas = intent.getSerializableExtra("mesa") as ArrayList<String>
         empleados = intent.getSerializableExtra("empleado") as ArrayList<String>
-        empleadosSel = intent.getSerializableExtra("empelado_sel") as ArrayList<String>
+        empleadosSel = intent.getSerializableExtra("empleado_sel") as ArrayList<String>
         clientesSel = intent.getSerializableExtra("clientes_sel") as ArrayList<String>
         pedidoSel = intent.getSerializableExtra("pedido_sel") as ArrayList<String>
         println("Menu" + menus.toString() + "clientes" + nombres.toString() +

@@ -22,6 +22,9 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
     var mesa: ArrayList<String> = ArrayList()
     var empleado: ArrayList<String> = ArrayList()
     var pedido : ArrayList<String> = ArrayList()
+    var empleadosel: ArrayList<String> = ArrayList()
+    var clientesel: ArrayList<String> = ArrayList()
+
 
 
     fun datos (cliente: ArrayList<String>) {
@@ -50,11 +53,15 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
         this.empleado = empleado
         println(("empleado"+ clientes.toString()+ "Menu" + menu.toString()+"Empleado"+ empleado.toString() +  mesa.toString()))
     }
-    fun pedido(cliente: ArrayList<String>, menus: ArrayList<String>,  empleado: ArrayList<String>, pedidos: ArrayList<String>,){
+    fun pedido(cliente: ArrayList<String>, menus: ArrayList<String>,  empleado: ArrayList<String>, pedidos: ArrayList<String>,clientesel: ArrayList<String>, empleadosels: ArrayList<String>, mesa: ArrayList<String>){
         this.clientes = cliente
         this.menu = menus
         this.empleado = empleado
         this.pedido = pedidos
+        this.clientesel = clientesel
+        this.empleadosel = empleadosels
+        this.mesa = mesa
+
         println(("cliente"+ clientes.toString()+ "Menu" + menu.toString()+"Empleado"+ empleado.toString() + "Mesa"+ "pedido" + pedido.toString()))
     }
 
@@ -95,17 +102,35 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
                 when (position){
                     0 -> {
                         val intent = Intent(itemView.context, Cliente_Activity::class.java)
+                        intent.putExtra("menu", menu)
+                        intent.putExtra("cliente", clientes)
+                        intent.putExtra("mesa", mesa)
+                        intent.putExtra("empleado", empleado)
+                        intent.putExtra("empleado_sel", empleadosel)
+                        intent.putExtra("pedido_sel", pedido)
+                        intent.putExtra("clientes_sel", clientesel)
                         startActivity(itemView.context, intent,null)
                     }
                     1 -> {
                         val intent = Intent(itemView.context, Menu_Activity::class.java)
+                        intent.putExtra("menu", menu)
                         intent.putExtra("cliente", clientes)
+                        intent.putExtra("mesa", mesa)
+                        intent.putExtra("empleado", empleado)
+                        intent.putExtra("empleado_sel", empleadosel)
+                        intent.putExtra("pedido_sel", pedido)
+                        intent.putExtra("clientes_sel", clientesel)
                         startActivity(itemView.context, intent, null)
                     }
                     2 -> {
                         val intent = Intent(itemView.context, Mesa_Activity::class.java)
                         intent.putExtra("menu", menu)
                         intent.putExtra("cliente", clientes)
+                        intent.putExtra("mesa", mesa)
+                        intent.putExtra("empleado", empleado)
+                        intent.putExtra("empleado_sel", empleadosel)
+                        intent.putExtra("pedido_sel", pedido)
+                        intent.putExtra("clientes_sel", clientesel)
 
                         startActivity(itemView.context, intent, null)
                     }
@@ -114,6 +139,10 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
                         intent.putExtra("menu", menu)
                         intent.putExtra("cliente", clientes)
                         intent.putExtra("mesa", mesa)
+                        intent.putExtra("empleado", empleado)
+                        intent.putExtra("empleado_sel", empleadosel)
+                        intent.putExtra("pedido_sel", pedido)
+                        intent.putExtra("clientes_sel", clientesel)
                         startActivity(itemView.context, intent, null)
                     }
                     4 -> {
@@ -122,12 +151,20 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
                         intent.putExtra("cliente", clientes)
                         intent.putExtra("mesa", mesa)
                         intent.putExtra("empleado", empleado)
+                        intent.putExtra("empleado_sel", empleadosel)
+                        intent.putExtra("pedido_sel", pedido)
+                        intent.putExtra("clientes_sel", clientesel)
                         startActivity(itemView.context, intent, null)
                     }
                     5 -> {
                         val intent = Intent(itemView.context, Diseno_Factura_Activity::class.java)
+                        intent.putExtra("menu", menu)
+                        intent.putExtra("cliente", clientes)
+                        intent.putExtra("mesa", mesa)
                         intent.putExtra("empleado", empleado)
-                        intent.putExtra("pedido", pedido)
+                        intent.putExtra("empleado_sel", empleadosel)
+                        intent.putExtra("pedido_sel", pedido)
+                        intent.putExtra("clientes_sel", clientesel)
                         startActivity(itemView.context, intent, null)
                     }
 

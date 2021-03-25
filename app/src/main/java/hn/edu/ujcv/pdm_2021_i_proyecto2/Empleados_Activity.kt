@@ -32,13 +32,18 @@ class Empleados_Activity : AppCompatActivity() {
     }
 
     fun cambioPantalla(){
-            valor=4
-            val cambio = Intent(this, MainActivity::class.java)
-                cambio.putExtra("valor", valor)
-                cambio.putExtra("plato", menus)
-                cambio.putExtra("cliente", clientes)
-                cambio.putExtra("mesa", mesas)
-                cambio.putExtra("empleado", empleados)
+            valor=5
+        val cambio = Intent(this, MainActivity::class.java)
+            cambio.putExtra("valor", valor)
+            cambio.putExtra("menu", menus)
+            cambio.putExtra("cliente", clientes)
+            cambio.putExtra("mesa", mesas)
+            cambio.putExtra("empleado", empleados)
+            cambio.putExtra("empleado_sel", empleadosSel)
+            cambio.putExtra("clientes_sel", clientesSel)
+            cambio.putExtra("pedido_sel", pedidoSel)
+
+
             startActivity(cambio)
     }
 
@@ -78,7 +83,7 @@ class Empleados_Activity : AppCompatActivity() {
         clientes = intent.getSerializableExtra("cliente") as ArrayList<String>
         mesas = intent.getSerializableExtra("mesa") as ArrayList<String>
         empleados = intent.getSerializableExtra("empleado") as ArrayList<String>
-        empleadosSel = intent.getSerializableExtra("empelado_sel") as ArrayList<String>
+        empleadosSel = intent.getSerializableExtra("empleado_sel") as ArrayList<String>
         clientesSel = intent.getSerializableExtra("clientes_sel") as ArrayList<String>
         pedidoSel = intent.getSerializableExtra("pedido_sel") as ArrayList<String>
         println("Menu" + menus.toString() + "clientes" + clientes.toString() +
