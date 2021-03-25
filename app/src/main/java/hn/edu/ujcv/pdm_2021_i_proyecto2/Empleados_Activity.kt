@@ -18,6 +18,9 @@ class Empleados_Activity : AppCompatActivity() {
     var menus : ArrayList<String> = ArrayList()
     var empleados : ArrayList<String> = ArrayList()
     var valor =0
+    var empleadosSel:ArrayList<String> = ArrayList()
+    var clientesSel:ArrayList<String> = ArrayList()
+    var pedidoSel:ArrayList<String> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -71,9 +74,16 @@ class Empleados_Activity : AppCompatActivity() {
     }
     fun datos(){
         var intent = intent
-        clientes= intent.getSerializableExtra("cliente") as ArrayList<String>
-        menus= intent.getSerializableExtra("menu") as ArrayList<String>
+        menus = intent.getSerializableExtra("menu") as ArrayList<String>
+        clientes = intent.getSerializableExtra("cliente") as ArrayList<String>
         mesas = intent.getSerializableExtra("mesa") as ArrayList<String>
-        println("cliente mesa"+this.mesas.toString()+ clientes.toString()+ menus.toString())
+        empleados = intent.getSerializableExtra("empleado") as ArrayList<String>
+        empleadosSel = intent.getSerializableExtra("empelado_sel") as ArrayList<String>
+        clientesSel = intent.getSerializableExtra("clientes_sel") as ArrayList<String>
+        pedidoSel = intent.getSerializableExtra("pedido_sel") as ArrayList<String>
+        println("Menu" + menus.toString() + "clientes" + clientes.toString() +
+        "mesas"+ mesas.toString() + "empleados"+ empleados.toString()
+        +"empleado selecionado"+empleadosSel.toString()+"clienteselecionado"+clientesSel.toString()+
+                "pedido selecionado"+pedidoSel.toString())
     }
 }

@@ -11,10 +11,14 @@ import java.lang.StringBuilder
 class Mesa_Activity : AppCompatActivity() {
     private val Mesa : HashMap<Int, String> = hashMapOf()
     private var numero = 0
-    var clientes: ArrayList<String> = ArrayList()
-    var menu: ArrayList<String> = ArrayList()
-    var mesa: ArrayList<String> = ArrayList()
+    var clientes:ArrayList<String> = ArrayList()
+    var mesas:ArrayList<String> = ArrayList()
+    var menus:ArrayList<String> = ArrayList()
+    var empleados:ArrayList<String> = ArrayList()
     var valor =0
+    var empleadosSel:ArrayList<String> = ArrayList()
+    var clientesSel:ArrayList<String> = ArrayList()
+    var pedidoSel:ArrayList<String> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +34,7 @@ class Mesa_Activity : AppCompatActivity() {
             dato.append(txtDescripcion.text.toString().trim())
             Mesa.put(numero, dato.toString())
             println(Mesa.toMap())
-            mesa.add(txtCodigo.text.toString())
+            mesas.add(txtCodigo.text.toString())
             Toast.makeText(this,"Mesa guardada con exito",Toast.LENGTH_LONG).show()
         }else{
             validar()
@@ -48,16 +52,24 @@ class Mesa_Activity : AppCompatActivity() {
         val cambio = Intent(this, MainActivity::class.java)
         valor = 3
         cambio.putExtra("valor", valor)
-        cambio.putExtra("plato", menu)
+        cambio.putExtra("plato", menus)
         cambio.putExtra("cliente", clientes)
-        cambio.putExtra("mesa", mesa)
-        println("cliente + menu + mesa"+ clientes.toString() + menu.toString() + mesa.toString())
+        cambio.putExtra("mesa", mesas)
+        println("cliente + menu + mesa"+ clientes.toString() + menus.toString() + mesas.toString())
         startActivity(cambio)
     }
     fun datos(){
         var intent = intent
-        clientes= intent.getSerializableExtra("cliente") as ArrayList<String>
-        menu= intent.getSerializableExtra("menu") as ArrayList<String>
-        println("cliente + menu"+ clientes.toString() + menu.toString())
+        menus = intent.getSerializableExtra("menu") as ArrayList<String>
+        clientes = intent.getSerializableExtra("cliente") as ArrayList<String>
+        mesas = intent.getSerializableExtra("mesa") as ArrayList<String>
+        empleados = intent.getSerializableExtra("empleado") as ArrayList<String>
+        empleadosSel = intent.getSerializableExtra("empelado_sel") as ArrayList<String>
+        clientesSel = intent.getSerializableExtra("clientes_sel") as ArrayList<String>
+        pedidoSel = intent.getSerializableExtra("pedido_sel") as ArrayList<String>
+        println("Menu" + menus.toString() + "clientes" + clientes.toString() +
+                "mesas"+ mesas.toString() + "empleados"+ empleados.toString()
+                +"empleado selecionado"+empleadosSel.toString()+"clienteselecionado"+clientesSel.toString()+
+                "pedido selecionado"+pedidoSel.toString())
     }
 }

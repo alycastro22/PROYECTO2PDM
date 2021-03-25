@@ -14,7 +14,13 @@ class Cliente_Activity : AppCompatActivity() {
     var  numero = 0
     var enviar = 0
     var nombres: ArrayList<String> = ArrayList()
-    var platillos: ArrayList<String> = ArrayList()
+    var mesas:ArrayList<String> = ArrayList()
+    var menus:ArrayList<String> = ArrayList()
+    var empleados:ArrayList<String> = ArrayList()
+    var empleadosSel:ArrayList<String> = ArrayList()
+    var clientesSel:ArrayList<String> = ArrayList()
+    var pedidoSel:ArrayList<String> = ArrayList()
+
     private var adapter: RecyclerAdapter = RecyclerAdapter()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,4 +71,20 @@ class Cliente_Activity : AppCompatActivity() {
         println("ALUMNO enviando"+ this.enviar.toString())
 
     }
+
+    fun datos(){
+        var intent = intent
+        menus = intent.getSerializableExtra("menu") as ArrayList<String>
+        nombres = intent.getSerializableExtra("cliente") as ArrayList<String>
+        mesas = intent.getSerializableExtra("mesa") as ArrayList<String>
+        empleados = intent.getSerializableExtra("empleado") as ArrayList<String>
+        empleadosSel = intent.getSerializableExtra("empelado_sel") as ArrayList<String>
+        clientesSel = intent.getSerializableExtra("clientes_sel") as ArrayList<String>
+        pedidoSel = intent.getSerializableExtra("pedido_sel") as ArrayList<String>
+        println("Menu" + menus.toString() + "clientes" + nombres.toString() +
+                "mesas"+ mesas.toString() + "empleados"+ empleados.toString()
+                +"empleado selecionado"+empleadosSel.toString()+"clienteselecionado"+clientesSel.toString()+
+                "pedido selecionado"+pedidoSel.toString())
+    }
+
 }
