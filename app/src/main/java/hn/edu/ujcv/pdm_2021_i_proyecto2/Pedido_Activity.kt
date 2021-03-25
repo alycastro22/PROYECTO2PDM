@@ -3,11 +3,9 @@ package hn.edu.ujcv.pdm_2021_i_proyecto2
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_empleados_.*
 import kotlinx.android.synthetic.main.activity_pedido_.*
 import kotlinx.android.synthetic.main.activity_pedido_.imageRetroceder
 import kotlinx.android.synthetic.main.activity_pedido_.spinnerClientes
