@@ -31,6 +31,8 @@ class Pedido_Activity : AppCompatActivity() {
         agregarItemsMenu()
         imageRetroceder.setOnClickListener { cambioPantalla() }
         txvRegistrarP.setOnClickListener { guardarpedido() }
+        enviara.setOnClickListener { guardarmenu() }
+        Toast.makeText(this, "Añada la orden al pedido dando click en la comida deseada",Toast.LENGTH_LONG ).show()
 
        // iniciabilizador()
     }
@@ -59,12 +61,19 @@ class Pedido_Activity : AppCompatActivity() {
     fun guardarpedido(){
 
         val dato = StringBuilder()
-        dato.append(spinnerClientes.selectedItem.toString().trim()).append("|")
-        dato.append(spinnerVariosMenus.selectedItem.toString().trim()).append("|")
-        dato.append(spinnerEmpleado1.selectedItem.toString().trim())
-        pedido.add(dato.toString())
+        //dato.append(spinnerClientes.selectedItem.toString().trim())
+        clientesSel.add(spinnerClientes.selectedItem.toString())
+        empleadosSel.add(spinnerEmpleado1.selectedItem.toString())
+        //dato.append(spinnerVariosMenus.selectedItem.toString().trim()).append("|")
+        //dato.append(spinnerEmpleado1.selectedItem.toString().trim())
+        //pedido.add(dato.toString())
         println(pedido.toString() + "Datos de pedido")
         Toast.makeText(this, "Pedido registrado con exito", Toast.LENGTH_LONG).show()
+
+    }
+    fun guardarmenu(){
+        pedidoSel.add(spinnerVariosMenus.selectedItem.toString())
+        Toast.makeText(this, "Añada platillos requeridos y despues guarde",Toast.LENGTH_LONG ).show()
 
     }
 

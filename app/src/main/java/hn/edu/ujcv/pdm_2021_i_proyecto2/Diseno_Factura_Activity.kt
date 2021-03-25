@@ -24,7 +24,15 @@ class Diseno_Factura_Activity : AppCompatActivity() {
     var empleados: ArrayList<String> = ArrayList()
     var pedido : ArrayList<String> = ArrayList()
     var factura : ArrayList<String> = ArrayList()
-    var nombre = " "
+    var mesas:ArrayList<String> = ArrayList()
+    var menus:ArrayList<String> = ArrayList()
+    var clientes:ArrayList<String> = ArrayList()
+    var empleadosSel:ArrayList<String> = ArrayList()
+    var clientesSel:ArrayList<String> = ArrayList()
+    var pedidoSel:ArrayList<String> = ArrayList()
+    var clienteva:ArrayList<String> = ArrayList()
+    var empleadova: ArrayList<String> = ArrayList()
+    val valor = 5
 
 
 
@@ -36,6 +44,7 @@ class Diseno_Factura_Activity : AppCompatActivity() {
         agregarItemPedido()
         agregarItemEmpleado()
         agregarItemPago()
+        agregarpedido()
         txvRegistrar.setOnClickListener { guardar() }
         imageRetroceder.setOnClickListener { cambioPantallaFactura() }
         enviara.setOnClickListener { enviar() }
@@ -51,19 +60,34 @@ class Diseno_Factura_Activity : AppCompatActivity() {
 
     fun cambioPantallaFactura(){
         val cambio = Intent(this, MainActivity::class.java)
+        cambio.putExtra("valor", valor)
+        cambio.putExtra("menu", menus)
+        cambio.putExtra("cliente", clienteva)
+        cambio.putExtra("mesa", mesas)
+        cambio.putExtra("empleado", empleados)
+        cambio.putExtra("empleado_sel", empleadova)
+        cambio.putExtra("clientes_sel", clienteva)
+        cambio.putExtra("pedido_sel", pedido)
         startActivity(cambio)
     }
     fun agregarItemPedido(){
         val spinnerC : Spinner = findViewById(R.id.spinnerClientes)
         val adapterC : ArrayAdapter<String> = ArrayAdapter(this,
-                android.R.layout.simple_spinner_item, pedido)
+                android.R.layout.simple_spinner_item, clientesSel)
         adapterC.setDropDownViewResource(android.R.layout.simple_spinner_item)
         spinnerC.adapter = adapterC
     }
     fun agregarItemEmpleado(){
         val spinnerE : Spinner = findViewById(R.id.spinnerEmpleado1)
         val adapterE : ArrayAdapter<String> = ArrayAdapter(this,
-        android.R.layout.simple_spinner_item, empleados)
+        android.R.layout.simple_spinner_item, empleadosSel)
+        adapterE.setDropDownViewResource(android.R.layout.simple_spinner_item)
+        spinnerE.adapter = adapterE
+    }
+    fun agregarpedido(){
+        val spinnerE : Spinner = findViewById(R.id.spinnerPedido)
+        val adapterE : ArrayAdapter<String> = ArrayAdapter(this,
+                android.R.layout.simple_spinner_item, pedidoSel)
         adapterE.setDropDownViewResource(android.R.layout.simple_spinner_item)
         spinnerE.adapter = adapterE
     }
@@ -102,8 +126,13 @@ class Diseno_Factura_Activity : AppCompatActivity() {
 
     fun datos(){
         var intent = intent
-        pedido = intent.getSerializableExtra("pedido") as ArrayList<String>
+        menus = intent.getSerializableExtra("menu") as ArrayList<String>
+        clientes = intent.getSerializableExtra("cliente") as ArrayList<String>
+        mesas = intent.getSerializableExtra("mesa") as ArrayList<String>
         empleados = intent.getSerializableExtra("empleado") as ArrayList<String>
+        empleadosSel = intent.getSerializableExtra("empleado_sel") as ArrayList<String>
+        clientesSel = intent.getSerializableExtra("clientes_sel") as ArrayList<String>
+        pedidoSel = intent.getSerializableExtra("pedido_sel") as ArrayList<String>
         println("cliente pedido"+this.pedido.toString()+  "empleado pedido"+this.empleados.toString())
     }
 
@@ -113,7 +142,7 @@ class Diseno_Factura_Activity : AppCompatActivity() {
         val intent = Intent(Intent.ACTION_SEND)
         intent.putExtra(Intent.EXTRA_EMAIL, to)
         intent.putExtra(Intent.EXTRA_SUBJECT, "FACTURA SAZÓN CATRACHO")
-        intent.putExtra(Intent.EXTRA_TEXT,  "factura N1" + "\n Cliente|     Menu    |Generada por:" + "\n"+spinnerClientes.selectedItem.toString()+ "\n tipo de pago:" +  spinnerPago.selectedItem.toString() + "\n total:" +  txttotalPagar.text.toString() +
+        intent.putExtra(Intent.EXTRA_TEXT,  "factura N1" + "\ncliente:" + "\n"+spinnerClientes.selectedItem.toString()+ "\n Orden:" + this.pedidoSel + "\n tipo de pago:" +  spinnerPago.selectedItem.toString() + "\n total:" +  txttotalPagar.text.toString() +
                 "\n generada por:" + spinnerEmpleado1.selectedItem.toString())
 
         intent.setType("message/rfc822")
