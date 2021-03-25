@@ -47,16 +47,16 @@ class Diseno_Factura_Activity : AppCompatActivity() {
         agregarpedido()
         txvRegistrar.setOnClickListener { guardar() }
         imageRetroceder.setOnClickListener { cambioPantallaFactura() }
-        enviara.setOnClickListener { enviar() }
+        //enviara.setOnClickListener { enviar() }
         enviarf.setOnClickListener { enviarcorreo() }
 
     }
 
-    private fun enviar() {
+   /* private fun enviar() {
         val enviarFactura = Intent(this, FacturaActivityListActivity::class.java)
         dummyItem.enviarf(factura)
         startActivity(enviarFactura)
-    }
+    }*/
 
     fun cambioPantallaFactura(){
         val cambio = Intent(this, MainActivity::class.java)
@@ -106,7 +106,7 @@ class Diseno_Factura_Activity : AppCompatActivity() {
         factura.add(dato.toString())
         println(factura.toString())
         Toast.makeText(this, "Factura agregada con exito", Toast.LENGTH_LONG).show()
-        enviara.visibility = View.VISIBLE
+        //enviara.visibility = View.VISIBLE
 
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Enviar factura por Correo")
