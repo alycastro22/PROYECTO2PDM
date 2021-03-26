@@ -62,13 +62,21 @@ class Pedido_Activity : AppCompatActivity() {
 
         val dato = StringBuilder()
         //dato.append(spinnerClientes.selectedItem.toString().trim())
-        clientesSel.add(spinnerClientes.selectedItem.toString())
-        empleadosSel.add(spinnerEmpleado1.selectedItem.toString())
+
         //dato.append(spinnerVariosMenus.selectedItem.toString().trim()).append("|")
         //dato.append(spinnerEmpleado1.selectedItem.toString().trim())
         //pedido.add(dato.toString())
-        println(pedido.toString() + "Datos de pedido")
-        Toast.makeText(this, "Pedido registrado con exito", Toast.LENGTH_LONG).show()
+
+
+        if(pedidoSel.isEmpty()){
+            Toast.makeText(this, "Debe agregar un platillo al pedido", Toast.LENGTH_LONG).show()
+        }else{
+            clientesSel.add(spinnerClientes.selectedItem.toString())
+            empleadosSel.add(spinnerEmpleado1.selectedItem.toString())
+            println(pedido.toString() + "Datos de pedido")
+            Toast.makeText(this, "Pedido registrado con exito", Toast.LENGTH_LONG).show()
+
+        }
 
     }
     fun guardarmenu(){
